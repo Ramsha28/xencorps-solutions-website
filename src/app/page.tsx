@@ -262,8 +262,13 @@ function Navigation() {
         <div style={{ display: "flex", alignItems: "center", gap: 30 }}>
           {links.map(l => (
             <a key={l} href="#" style={{ fontFamily: T.sans, fontSize: 13.5, fontWeight: 500, color: "rgba(245,252,252,0.72)", textDecoration: "none", letterSpacing: "0.005em", transition: "color 0.2s" }}
-              onMouseEnter={e => e.target.style.color = T.white}
-              onMouseLeave={e => e.target.style.color = "rgba(245,252,252,0.72)"}
+              onMouseEnter={(e) => {
+  (e.currentTarget as HTMLAnchorElement).style.color = T.white;
+}}
+onMouseLeave={(e) => {
+  (e.currentTarget as HTMLAnchorElement).style.color =
+    "rgba(245,252,252,0.72)";
+}}
             >{l}</a>
           ))}
           <a href="#" style={{
@@ -275,8 +280,17 @@ function Navigation() {
             letterSpacing: "0.01em",
             transition: "background 0.2s, box-shadow 0.2s",
           }}
-            onMouseEnter={e => { e.target.style.background = T.tealLight; e.target.style.boxShadow = `0 0 28px ${T.tealGlowStrong}`; }}
-            onMouseLeave={e => { e.target.style.background = T.teal; e.target.style.boxShadow = `0 0 18px ${T.tealGlow}`; }}
+            onMouseEnter={(e) => {
+  const target = e.currentTarget as HTMLAnchorElement;
+  target.style.background = T.tealLight;
+  target.style.boxShadow = `0 0 28px ${T.tealGlowStrong}`;
+}}
+
+onMouseLeave={(e) => {
+  const target = e.currentTarget as HTMLAnchorElement;
+  target.style.background = T.teal;
+  target.style.boxShadow = `0 0 18px ${T.tealGlow}`;
+}}
           >
             Schedule Consultation
           </a>
@@ -1059,8 +1073,13 @@ function Footer() {
                 {col.links.map(l => (
                   <li key={l} style={{ marginBottom:9 }}>
                     <a href="#" style={{ fontFamily:T.sans, fontSize:13, color:"rgba(122,172,172,0.52)", textDecoration:"none", fontWeight:300, transition:"color 0.2s" }}
-                      onMouseEnter={e => e.target.style.color = T.textPrimary}
-                      onMouseLeave={e => e.target.style.color = "rgba(122,172,172,0.52)"}
+                     onMouseEnter={(e) => {
+  (e.currentTarget as HTMLAnchorElement).style.color = T.textPrimary;
+}}
+onMouseLeave={(e) => {
+  (e.currentTarget as HTMLAnchorElement).style.color =
+    "rgba(122,172,172,0.52)";
+}}
                     >{l}</a>
                   </li>
                 ))}
