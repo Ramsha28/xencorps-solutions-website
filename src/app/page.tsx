@@ -4,7 +4,7 @@ export default function Home() {
       <nav className="flex justify-between items-center p-6 border-b">
         <h1 className="text-xl font-bold">Enterprise Solutions</h1>
         <button className="px-4 py-2 border rounded">
-          Contact Us
+          Contact Us now
         </button>
       </nav>
 
