@@ -14,26 +14,26 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section style={{ background:T.inkMid, padding:"112px 0" }}>
-      <div style={{ maxWidth:1300, margin:"0 auto", padding:"0 36px" }}>
+    <section style={{ background: T.white, padding: "112px 0" }}>
+      <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 36px" }}>
         <Reveal>
-          <div style={{ marginBottom:60 }}>
-            <p style={{ fontFamily:T.sans, fontSize:11, fontWeight:600, color:T.teal, textTransform:"uppercase", letterSpacing:"0.16em", marginBottom:14 }}>Why Xencorpsolutions</p>
-            <h2 style={{ fontFamily:T.sans, fontSize:"clamp(28px,3.4vw,46px)", fontWeight:700, color:T.textPrimary, letterSpacing:"-0.025em", lineHeight:1.1 }}>
-              What Separates Us From<br/><span style={{ color:T.teal }}>Every Other Technology Firm</span>
+          <div style={{ marginBottom: 60 }}>
+            <p style={{ fontFamily: T.sans, fontSize: 11, fontWeight: 600, color: "#16A34A", textTransform: "uppercase", letterSpacing: "0.16em", marginBottom: 14 }}>Why Xencorpsolutions</p>
+            <h2 style={{ fontFamily: T.sans, fontSize: "clamp(28px,3.4vw,46px)", fontWeight: 700, color: "#0F172A", letterSpacing: "-0.025em", lineHeight: 1.1 }}>
+              What Separates Us From<br /><span style={{ color: "#16A34A" }}>Every Other Technology Firm</span>
             </h2>
           </div>
         </Reveal>
-        <div style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:1, background:"rgba(0,128,128,0.08)" }}>
-          {reasons.map((r,i) => (
-            <Reveal key={r.n} delay={i*0.07}>
-              <motion.div whileHover={{ background:T.inkSoft }}
-                style={{ background:T.inkMid, padding:"40px 34px", transition:"background 0.3s", position:"relative", overflow:"hidden" }}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 24 }}>
+          {reasons.map((r, i) => (
+            <Reveal key={r.n} delay={i * 0.07}>
+              <motion.div whileHover={{ background: T.mistDim }}
+                style={{ background: T.mist, border: "1px solid rgba(15, 23, 42, 0.05)", borderRadius: 12, padding: "40px 34px", transition: "background 0.3s", position: "relative", overflow: "hidden" }}
               >
-                <motion.div initial={{scaleX:0}} whileHover={{scaleX:1}} style={{ position:"absolute", top:0, left:0, right:0, height:2, background:T.teal, transformOrigin:"left", transition:"transform 0.3s ease" }}/>
-                <div style={{ fontFamily:T.sans, fontSize:12, fontWeight:600, color:"rgba(0,128,128,0.32)", marginBottom:16, letterSpacing:"0.05em" }}>{r.n}</div>
-                <h3 style={{ fontFamily:T.sans, fontSize:16.5, fontWeight:600, color:T.textPrimary, lineHeight:1.38, marginBottom:12, letterSpacing:"-0.015em" }}>{r.t}</h3>
-                <p style={{ fontFamily:T.sans, fontSize:13.5, color:T.textSecondary, lineHeight:1.72, fontWeight:300 }}>{r.b}</p>
+                <motion.div initial={{ scaleX: 0 }} whileHover={{ scaleX: 1 }} style={{ position: "absolute", top: 0, left: 0, right: 0, height: 2, background: "#16A34A", transformOrigin: "left", transition: "transform 0.3s ease" }}/>
+                <div style={{ fontFamily: T.sans, fontSize: 12, fontWeight: 600, color: "rgba(22, 163, 74, 0.4)", marginBottom: 16, letterSpacing: "0.05em" }}>{r.n}</div>
+                <h3 style={{ fontFamily: T.sans, fontSize: 16.5, fontWeight: 600, color: "#0F172A", lineHeight: 1.38, marginBottom: 12, letterSpacing: "-0.015em" }}>{r.t}</h3>
+                <p style={{ fontFamily: T.sans, fontSize: 13.5, color: "#475569", lineHeight: 1.72, fontWeight: 300 }}>{r.b}</p>
               </motion.div>
             </Reveal>
           ))}

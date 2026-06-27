@@ -3,11 +3,12 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { T } from "../../styles/theme";
 import Reveal from "../../components/common/Reveal";
+import Link from "next/link";
 
 const products = [
-  { name:"SmartGRC",              badge:"GRC",     accent:T.teal,    tagline:"Enterprise Governance, Risk & Compliance Platform",    desc:"An AI-powered GRC ecosystem that centralises risk management, compliance monitoring, audit operations, cybersecurity governance, and executive reporting. Built for ISO 27001, GDPR, HIPAA, PCI DSS, NIST, DORA, and SOC 2 environments.", caps:["Risk Management","Audit Management","Compliance Monitoring","Policy Management","Vendor Risk","Cybersecurity Governance","Business Continuity","AI Governance"], stat:{v:"60%",l:"Compliance Workload Reduction"} },
-  { name:"Smart Orion",           badge:"ERP",     accent:"#00A370", tagline:"Enterprise ERP, POS & Business Automation Platform",   desc:"A next-generation business platform combining ERP, POS, inventory, accounting, AI analytics, and multi-branch operations. Built for enterprises and retail organisations that need real-time visibility across every business unit and location.", caps:["ERP Core","Point of Sale","Inventory Management","Accounting & Finance","Procurement","Multi-Branch Ops","Business Reporting","AI Analytics"], stat:{v:"35%",l:"Procurement Cost Reduction"} },
-  { name:"Smart Crypto Exchange", badge:"FINTECH", accent:"#7C3AED", tagline:"Enterprise Cryptocurrency Trading Platform",           desc:"Institutional-grade digital asset trading with sub-millisecond matching, full KYC/AML integration, and immutable compliance logging. Built for regulated operations and institutional-grade trading desks.", caps:["Sub-ms Trading Engine","Wallet Infrastructure","Market Data Streaming","KYC / AML Compliance","Administration Console","Institutional Trading","Developer APIs","Security & Audit Logs"], stat:{v:"<1ms",l:"Order Matching Latency"} },
+  { slug: "smart-grc", name:"SmartGRC",              badge:"GRC",     accent:T.teal,    tagline:"Enterprise Governance, Risk & Compliance Platform",    desc:"An AI-powered GRC ecosystem that centralises risk management, compliance monitoring, audit operations, cybersecurity governance, and executive reporting. Built for ISO 27001, GDPR, HIPAA, PCI DSS, NIST, DORA, and SOC 2 environments.", caps:["Risk Management","Audit Management","Compliance Monitoring","Policy Management","Vendor Risk","Cybersecurity Governance","Business Continuity","AI Governance"], stat:{v:"60%",l:"Compliance Workload Reduction"} },
+  { slug: "smart-orion", name:"Smart Orion",           badge:"ERP",     accent:"#00A370", tagline:"Enterprise ERP, POS & Business Automation Platform",   desc:"A next-generation business platform combining ERP, POS, inventory, accounting, AI analytics, and multi-branch operations. Built for enterprises and retail organisations that need real-time visibility across every business unit and location.", caps:["ERP Core","Point of Sale","Inventory Management","Accounting & Finance","Procurement","Multi-Branch Ops","Business Reporting","AI Analytics"], stat:{v:"35%",l:"Procurement Cost Reduction"} },
+  { slug: "smart-crypto-exchange", name:"Smart Crypto Exchange", badge:"FINTECH", accent:T.teal, tagline:"Enterprise Cryptocurrency Trading Platform",           desc:"Institutional-grade digital asset trading with sub-millisecond matching, full KYC/AML integration, and immutable compliance logging. Built for regulated operations and institutional-grade trading desks.", caps:["Sub-ms Trading Engine","Wallet Infrastructure","Market Data Streaming","KYC / AML Compliance","Administration Console","Institutional Trading","Developer APIs","Security & Audit Logs"], stat:{v:"<1ms",l:"Order Matching Latency"} },
 ];
 
 export default function ProductsSection() {
@@ -55,8 +56,8 @@ export default function ProductsSection() {
                 <span style={{ fontFamily:T.sans, fontSize:13, color:"#2E4A4A", lineHeight:1.4, maxWidth:110 }}>{p.stat.l}</span>
               </div>
               <div style={{ display:"flex", gap:12 }}>
-                <a href="#" style={{ padding:"12px 26px", background:p.accent, color:T.white, fontFamily:T.sans, fontSize:13.5, fontWeight:600, borderRadius:100, textDecoration:"none" }}>View Platform</a>
-                <a href="#" style={{ padding:"12px 26px", border:`1.5px solid ${T.mistDim}`, color:"#2E4A4A", fontFamily:T.sans, fontSize:13.5, fontWeight:500, borderRadius:100, textDecoration:"none" }}>Request Demo</a>
+                <Link href={`/products/${p.slug}`} style={{ padding:"12px 26px", background:p.accent, color:T.white, fontFamily:T.sans, fontSize:13.5, fontWeight:600, borderRadius:100, textDecoration:"none" }}>View Platform</Link>
+                <Link href="/contact" style={{ padding:"12px 26px", border:`1.5px solid ${T.mistDim}`, color:"#2E4A4A", fontFamily:T.sans, fontSize:13.5, fontWeight:500, borderRadius:100, textDecoration:"none" }}>Request Demo</Link>
               </div>
             </div>
             <div style={{ padding:"52px 44px", background:T.mist }}>

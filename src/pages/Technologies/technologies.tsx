@@ -77,7 +77,7 @@ export default function TechnologiesPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section style={{ position: "relative", minHeight: "55vh", display: "flex", alignItems: "center", overflow: "hidden", background: `radial-gradient(circle at 70% 30%, ${T.navyDim} 0%, ${T.ink} 70%)` }}>
+      <section style={{ position: "relative", minHeight: "55vh", display: "flex", alignItems: "center", overflow: "hidden", background: T.ink }}>
         <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 36px", paddingTop: 128, paddingBottom: 64, width: "100%", position: "relative", zIndex: 2 }}>
           <div style={{ maxWidth: 760 }}>
             <motion.div
@@ -165,11 +165,11 @@ export default function TechnologiesPage() {
             >
               <div>
                 <h3 style={{ fontSize: 26, fontWeight: 700, color: T.ink, marginBottom: 16, letterSpacing: "-0.02em" }}>{currentCategory.name}</h3>
-                <p style={{ fontSize: 15, color: "#3D5E5E", lineHeight: 1.72, fontWeight: 300, marginBottom: 24 }}>{currentCategory.desc}</p>
+                <p style={{ fontSize: 15, color: T.textSecondaryLight, lineHeight: 1.72, fontWeight: 300, marginBottom: 24 }}>{currentCategory.desc}</p>
                 
                 <div style={{ padding: 24, border: `1px solid ${T.mistDim}`, background: T.mist, borderRadius: 8 }}>
                   <h4 style={{ fontSize: 13, fontWeight: 700, color: T.ink, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 10 }}>Design Goal</h4>
-                  <p style={{ fontSize: 13, color: "#2E4A4A", lineHeight: 1.6, fontWeight: 300 }}>
+                  <p style={{ fontSize: 13, color: T.textSecondaryLight, lineHeight: 1.6, fontWeight: 300 }}>
                     Our deployments target sub-millisecond network profiles, high resilience failovers (Active-Active), and immutable security ledger controls.
                   </p>
                 </div>
@@ -209,7 +209,7 @@ export default function TechnologiesPage() {
               <Reveal key={card.title}>
                 <div style={{ background: T.white, padding: 36, border: `1px solid ${T.mistDim}`, borderRadius: 8, height: "100%" }}>
                   <h3 style={{ fontSize: 17, fontWeight: 600, color: T.ink, marginBottom: 12 }}>{card.title}</h3>
-                  <p style={{ fontSize: 13, color: "#3D5E5E", lineHeight: 1.66, fontWeight: 300 }}>{card.desc}</p>
+                  <p style={{ fontSize: 13, color: T.textSecondaryLight, lineHeight: 1.66, fontWeight: 300 }}>{card.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -218,7 +218,7 @@ export default function TechnologiesPage() {
       </section>
 
       {/* CTA Section */}
-      <section style={{ background: `linear-gradient(135deg, ${T.ink} 0%, ${T.navyDim} 100%)`, padding: "96px 0", color: T.white, textAlign: "center" }}>
+      <section style={{ background: T.ink, padding: "96px 0", color: T.white, textAlign: "center" }}>
         <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 36px" }}>
           <Reveal>
             <h2 style={{ fontFamily: T.display, fontSize: "clamp(26px, 3.2vw, 44px)", fontWeight: 700, color: T.white, marginBottom: 16 }}>Need Custom Architecture Advice?</h2>

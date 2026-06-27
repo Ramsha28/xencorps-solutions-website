@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { T } from "../../styles/theme";
 import AnimCounter from "../../components/common/AnimCounter";
 import HeroBg from "./HeroBg";
+import Link from "next/link";
 
 export default function Hero() {
   const { scrollYProgress } = useScroll();
@@ -27,8 +28,8 @@ export default function Hero() {
             transition={{ duration: 0.55, delay: 0.18 }}
             style={{ y: badgeY, display: "flex", alignItems: "center", gap: 11, marginBottom: 30 }}
           >
-            <div style={{ width: 30, height: 1.5, background: T.teal, borderRadius: 2 }}/>
-            <span style={{ fontFamily: T.sans, fontSize: 11, fontWeight: 600, color: T.tealLight, textTransform: "uppercase", letterSpacing: "0.18em" }}>
+            <div style={{ width: 30, height: 1.5, background: "#16A34A", borderRadius: 2 }}/>
+            <span style={{ fontFamily: T.sans, fontSize: 11, fontWeight: 600, color: T.textOnDarkSecondary, textTransform: "uppercase", letterSpacing: "0.18em" }}>
               Enterprise Technology & Intelligent Systems
             </span>
           </motion.div>
@@ -43,14 +44,14 @@ export default function Hero() {
               fontFamily: T.display,
               fontSize: "clamp(42px, 5.8vw, 80px)",
               fontWeight: 800,
-              color: T.textPrimary,
+              color: T.white,
               lineHeight: 1.06,
               letterSpacing: "-0.025em",
               marginBottom: 26,
             }}
           >
             Intelligent{" "}
-            <em style={{ fontStyle: "italic", color: T.tealLight }}>Enterprise</em>
+            <em style={{ fontStyle: "italic", color: "#4ADE80" }}>Enterprise</em>
             <br />Systems. Built
             <br />to Endure.
           </motion.h1>
@@ -63,7 +64,7 @@ export default function Hero() {
             style={{
               y: subY,
               fontFamily: T.sans, fontSize: 17, fontWeight: 300,
-              color: T.textSecondary, lineHeight: 1.78,
+              color: T.textOnDarkSecondary, lineHeight: 1.78,
               maxWidth: 510, marginBottom: 46,
               letterSpacing: "0.005em",
             }}
@@ -78,30 +79,36 @@ export default function Hero() {
             transition={{ duration: 0.62, delay: 0.58 }}
             style={{ display: "flex", gap: 14, flexWrap: "wrap" }}
           >
-            <a href="#" style={{
+            <Link href="/contact" style={{
               padding: "14px 30px",
-              background: T.teal, color: T.white,
+              background: "#16A34A", color: T.white,
               fontFamily: T.sans, fontSize: 14, fontWeight: 600,
               borderRadius: 100, textDecoration: "none",
               display: "inline-flex", alignItems: "center", gap: 8,
-              boxShadow: `0 0 36px ${T.tealGlowStrong}`,
+              boxShadow: "0 4px 18px rgba(22, 163, 74, 0.25)",
               letterSpacing: "0.01em",
-            }}>
+            }}
+              onMouseEnter={(e) => e.currentTarget.style.background = "#15803D"}
+              onMouseLeave={(e) => e.currentTarget.style.background = "#16A34A"}
+            >
               Schedule Consultation
               <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/>
               </svg>
-            </a>
-            <a href="#" style={{
+            </Link>
+            <Link href="/products" style={{
               padding: "14px 30px",
-              background: "transparent", color: T.textPrimary,
+              background: "transparent", color: "#4ADE80",
               fontFamily: T.sans, fontSize: 14, fontWeight: 500,
               borderRadius: 100, textDecoration: "none",
-              border: "1.5px solid rgba(0,128,128,0.32)",
+              border: `1.5px solid #16A34A`,
               letterSpacing: "0.01em",
-            }}>
+            }}
+              onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(22, 163, 74, 0.1)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; }}
+            >
               Explore Platforms
-            </a>
+            </Link>
           </motion.div>
 
           {/* Stats row */}
@@ -109,7 +116,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.82, duration: 0.72 }}
-            style={{ opacity: statOp, display: "flex", gap: 44, marginTop: 64, paddingTop: 32, borderTop: "1px solid rgba(0,128,128,0.14)" }}
+            style={{ opacity: statOp, display: "flex", gap: 44, marginTop: 64, paddingTop: 32, borderTop: `1px solid ${T.line}` }}
           >
             {[
               { v: 3,  s: "",   l: "Proprietary Platforms" },
@@ -120,7 +127,7 @@ export default function Hero() {
                 <div style={{ fontFamily: T.sans, fontSize: 36, fontWeight: 700, color: T.white, letterSpacing: "-0.03em", lineHeight: 1 }}>
                   <AnimCounter target={m.v} suffix={m.s}/>
                 </div>
-                <div style={{ fontFamily: T.sans, fontSize: 12, color: T.textMuted, marginTop: 5, fontWeight: 400 }}>{m.l}</div>
+                <div style={{ fontFamily: T.sans, fontSize: 12, color: T.textOnDarkSecondary, marginTop: 5, fontWeight: 400 }}>{m.l}</div>
               </div>
             ))}
           </motion.div>
@@ -134,8 +141,8 @@ export default function Hero() {
         transition={{ duration: 2, repeat: Infinity }}
         style={{ position: "absolute", bottom: 36, left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}
       >
-        <span style={{ fontFamily: T.sans, fontSize: 10, color: T.textMuted, textTransform: "uppercase", letterSpacing: "0.16em" }}>Scroll</span>
-        <div style={{ width: 1, height: 32, background: `linear-gradient(to bottom, ${T.tealDim}, transparent)` }}/>
+        <span style={{ fontFamily: T.sans, fontSize: 10, color: T.textOnDarkSecondary, textTransform: "uppercase", letterSpacing: "0.16em" }}>Scroll</span>
+        <div style={{ width: 1, height: 32, background: `linear-gradient(to bottom, #16A34A, transparent)` }}/>
       </motion.div>
     </section>
   );

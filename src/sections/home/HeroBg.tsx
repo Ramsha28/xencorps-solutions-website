@@ -1,15 +1,17 @@
 "use client";
 
-import { motion, useTransform, MotionValue } from "framer-motion";
+import { motion, useTransform, MotionValue, useScroll } from "framer-motion";
 import { T } from "../../styles/theme";
 
 interface HeroBgProps {
-  scrollYProgress: MotionValue<number>;
+  scrollYProgress?: MotionValue<number>;
 }
 
 export default function HeroBg({ scrollYProgress }: HeroBgProps) {
-  const gridY   = useTransform(scrollYProgress, [0, 1], [0, 120]);
-  const opacity = useTransform(scrollYProgress, [0, 0.55], [1, 0]);
+  const { scrollYProgress: defaultScroll } = useScroll();
+  const activeProgress = scrollYProgress || defaultScroll;
+  const gridY   = useTransform(activeProgress, [0, 1], [0, 120]);
+  const opacity = useTransform(activeProgress, [0, 0.55], [1, 0]);
   const rings   = [0, 1, 2, 3];
 
   return (
@@ -19,10 +21,10 @@ export default function HeroBg({ scrollYProgress }: HeroBgProps) {
         pointerEvents: "none", opacity,
       }}
     >
-      {/* Deep gradient base — navy */}
+      {/* Dark ink base */}
       <div style={{
         position: "absolute", inset: 0,
-        background: `radial-gradient(ellipse 80% 65% at 65% 42%, #1A2F6B 0%, ${T.ink} 70%)`,
+        background: T.ink,
       }} />
 
       <motion.svg
@@ -35,12 +37,12 @@ export default function HeroBg({ scrollYProgress }: HeroBgProps) {
           <pattern id="isogrid" x="0" y="0" width="120" height="68" patternUnits="userSpaceOnUse">
             <path d="M60 0 L120 34 L60 68 L0 34 Z"
               fill="none"
-              stroke="rgba(112,145,230,0.13)"
+              stroke="rgba(255, 255, 255, 0.05)"
               strokeWidth="0.8"
             />
           </pattern>
           <radialGradient id="vmask" cx="50%" cy="50%" r="65%">
-            <stop offset="0%"   stopColor="white" stopOpacity="0.35"/>
+            <stop offset="0%"   stopColor="white" stopOpacity="0.45"/>
             <stop offset="100%" stopColor="white" stopOpacity="0"/>
           </radialGradient>
           <mask id="igmask">
@@ -59,8 +61,8 @@ export default function HeroBg({ scrollYProgress }: HeroBgProps) {
         ].map((d, i) => (
           <motion.path
             key={i} d={d}
-            fill={T.navyGlow}
-            stroke={T.navyLight}
+            fill="rgba(34, 197, 94, 0.08)"
+            stroke="rgba(34, 197, 94, 0.28)"
             strokeWidth="0.8"
             strokeOpacity={0.45}
             animate={{ fillOpacity: [0.06, 0.22, 0.06] }}
@@ -74,9 +76,9 @@ export default function HeroBg({ scrollYProgress }: HeroBgProps) {
             key={i}
             cx={840} cy={358} r={40}
             fill="none"
-            stroke={T.navyLight}
+            stroke="rgba(34, 197, 94, 0.22)"
             strokeWidth="0.9"
-            initial={{ r: 40, opacity: 0.55 }}
+            initial={{ r: 40, opacity: 0.2 }}
             animate={{ r: 200, opacity: 0 }}
             transition={{ duration: 3.8, delay: i * 0.95, repeat: Infinity, ease: "easeOut" }}
           />
@@ -87,9 +89,9 @@ export default function HeroBg({ scrollYProgress }: HeroBgProps) {
           <motion.line
             key={i}
             x1={-60} y1={y} x2={500} y2={y}
-            stroke={T.navyLight}
+            stroke="rgba(34, 197, 94, 0.18)"
             strokeWidth="0.7"
-            strokeOpacity={0.18}
+            strokeOpacity={0.12}
             strokeDasharray="6 18"
             animate={{ x1: [-60, 560], x2: [500, 1120] }}
             transition={{ duration: 9 + i * 1.4, repeat: Infinity, ease: "linear", delay: i * 1.1 }}
@@ -98,8 +100,8 @@ export default function HeroBg({ scrollYProgress }: HeroBgProps) {
 
         <defs>
           <radialGradient id="orb" cx="50%" cy="50%" r="50%">
-            <stop offset="0%"   stopColor="#3D52A0" stopOpacity="0.28"/>
-            <stop offset="100%" stopColor="#3D52A0" stopOpacity="0"/>
+            <stop offset="0%"   stopColor="rgba(34, 197, 94, 1)" stopOpacity="0.08"/>
+            <stop offset="100%" stopColor="rgba(34, 197, 94, 1)" stopOpacity="0"/>
           </radialGradient>
         </defs>
         <ellipse cx="1150" cy="200" rx="320" ry="260" fill="url(#orb)"/>
@@ -113,7 +115,7 @@ export default function HeroBg({ scrollYProgress }: HeroBgProps) {
       {/* Left fade */}
       <div style={{
         position: "absolute", inset: 0,
-        background: `linear-gradient(to right, ${T.ink} 0%, rgba(13,27,62,0.55) 55%, transparent 100%)`,
+        background: `linear-gradient(to right, ${T.ink} 0%, rgba(11, 15, 20, 0.7) 45%, transparent 100%)`,
       }}/>
     </motion.div>
   );

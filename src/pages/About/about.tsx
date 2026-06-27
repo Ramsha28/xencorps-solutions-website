@@ -47,7 +47,7 @@ export default function About() {
       <Navigation />
 
       {/* Hero Section */}
-      <section style={{ position: "relative", minHeight: "65vh", display: "flex", alignItems: "center", overflow: "hidden", background: `radial-gradient(circle at 70% 30%, ${T.navyDim} 0%, ${T.ink} 70%)` }}>
+      <section style={{ position: "relative", minHeight: "65vh", display: "flex", alignItems: "center", overflow: "hidden", background: T.ink }}>
         <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 36px", paddingTop: 128, paddingBottom: 64, width: "100%", position: "relative", zIndex: 2 }}>
           <div style={{ maxWidth: 760 }}>
             <motion.div
@@ -188,7 +188,7 @@ export default function About() {
               <Reveal key={str.h} delay={i * 0.05}>
                 <div style={{ padding: "38px 30px", background: T.white, height: "100%", transition: "transform 0.25s" }}>
                   <h3 style={{ fontSize: 16, fontWeight: 600, color: T.ink, marginBottom: 10, letterSpacing: "-0.01em" }}>{str.h}</h3>
-                  <p style={{ fontSize: 13, color: "#3D5E5E", lineHeight: 1.66, fontWeight: 300 }}>{str.d}</p>
+                  <p style={{ fontSize: 13, color: T.textSecondaryLight, lineHeight: 1.66, fontWeight: 300 }}>{str.d}</p>
                 </div>
               </Reveal>
             ))}
@@ -245,7 +245,7 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section style={{ background: `linear-gradient(135deg, ${T.ink} 0%, ${T.navyDim} 100%)`, padding: "96px 0", color: T.white, textAlign: "center" }}>
+      <section style={{ background: T.ink, padding: "96px 0", color: T.white, textAlign: "center" }}>
         <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 36px" }}>
           <Reveal>
             <h2 style={{ fontFamily: T.display, fontSize: "clamp(26px, 3.2vw, 44px)", fontWeight: 700, color: T.white, marginBottom: 16 }}>Ready to Partner with Us?</h2>
