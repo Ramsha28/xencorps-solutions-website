@@ -5,6 +5,8 @@
 import {T} from "../../styles/theme";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+
 function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
@@ -13,7 +15,12 @@ function Navigation() {
     return () => window.removeEventListener("scroll", h);
   }, []);
 
-  const links = ["Services", "Products", "Industries", "Case Studies", "Insights", "About"];
+  const links = [
+    { name: "Services", href: "/services" },
+    { name: "Products", href: "/products" },
+    { name: "Industries", href: "/industries" },
+    { name: "About", href: "/about" },
+  ];
 
   return (
     <motion.nav
@@ -32,7 +39,7 @@ function Navigation() {
     >
       <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 36px", height: "100%", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         {/* Logo */}
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
           <div style={{ width: 34, height: 34, background: T.teal, borderRadius: 7, display: "flex", alignItems: "center", justifyContent: "center" }}>
             <svg viewBox="0 0 24 24" fill="none" width="18" height="18">
               <path d="M12 2L3 7V17L12 22L21 17V7L12 2Z" stroke="white" strokeWidth="1.6" fill="none"/>
@@ -48,22 +55,21 @@ function Navigation() {
           <span style={{ fontFamily: T.sans, fontWeight: 700, fontSize: 16.5, color: T.white, letterSpacing: "-0.01em" }}>
             Xencorp<span style={{ color: T.tealLight }}>solutions</span>
           </span>
-        </div>
+        </Link>
 
         {/* Links */}
         <div style={{ display: "flex", alignItems: "center", gap: 30 }}>
           {links.map(l => (
-            <a key={l} href="#" style={{ fontFamily: T.sans, fontSize: 13.5, fontWeight: 500, color: "rgba(245,252,252,0.72)", textDecoration: "none", letterSpacing: "0.005em", transition: "color 0.2s" }}
+            <Link key={l.name} href={l.href} style={{ fontFamily: T.sans, fontSize: 13.5, fontWeight: 500, color: "rgba(245,252,252,0.72)", textDecoration: "none", letterSpacing: "0.005em", transition: "color 0.2s" }}
               onMouseEnter={(e) => {
-  (e.currentTarget as HTMLAnchorElement).style.color = T.white;
-}}
-onMouseLeave={(e) => {
-  (e.currentTarget as HTMLAnchorElement).style.color =
-    "rgba(245,252,252,0.72)";
-}}
-            >{l}</a>
+                (e.currentTarget as HTMLAnchorElement).style.color = T.white;
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.color = "rgba(245,252,252,0.72)";
+              }}
+            >{l.name}</Link>
           ))}
-          <a href="#" style={{
+          <Link href="/contact" style={{
             padding: "9px 20px",
             background: T.teal, color: T.white,
             fontFamily: T.sans, fontSize: 13, fontWeight: 600,
@@ -73,24 +79,22 @@ onMouseLeave={(e) => {
             transition: "background 0.2s, box-shadow 0.2s",
           }}
             onMouseEnter={(e) => {
-  const target = e.currentTarget as HTMLAnchorElement;
-  target.style.background = T.tealLight;
-  target.style.boxShadow = `0 0 28px ${T.tealGlowStrong}`;
-}}
-
-onMouseLeave={(e) => {
-  const target = e.currentTarget as HTMLAnchorElement;
-  target.style.background = T.teal;
-  target.style.boxShadow = `0 0 18px ${T.tealGlow}`;
-}}
+              const target = e.currentTarget as HTMLAnchorElement;
+              target.style.background = T.tealLight;
+              target.style.boxShadow = `0 0 28px ${T.tealGlowStrong}`;
+            }}
+            onMouseLeave={(e) => {
+              const target = e.currentTarget as HTMLAnchorElement;
+              target.style.background = T.teal;
+              target.style.boxShadow = `0 0 18px ${T.tealGlow}`;
+            }}
           >
             Schedule Consultation
-          </a>
+          </Link>
         </div>
       </div>
     </motion.nav>
   );
-
 }
 
 export default Navigation;

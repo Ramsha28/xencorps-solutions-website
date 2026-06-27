@@ -1,10 +1,45 @@
 import { T } from "../../styles/theme";
+import Link from "next/link";
 
 const cols = [
-  { h:"Services",   links:["Software Engineering","AI & Intelligent Systems","ERP Solutions","Digital Transformation","Data Center & Infrastructure","IT Consulting"] },
-  { h:"Products",   links:["SmartGRC","Smart Orion","Smart Crypto Exchange"] },
-  { h:"Industries", links:["Banking & Finance","Healthcare","Government","Education","Manufacturing","Retail","Telecom","Logistics"] },
-  { h:"Company",    links:["About Us","Case Studies","Insights","Careers","Contact"] },
+  {
+    h: "Services",
+    links: [
+      { name: "Software Engineering", href: "/services/custom-software-development" },
+      { name: "AI & Intelligent Systems", href: "/services/artificial-intelligence" },
+      { name: "ERP Solutions", href: "/services/erp-solutions" },
+      { name: "Web Development", href: "/services/web-development" },
+      { name: "Data Center & Infrastructure", href: "/services/data-center-consulting" },
+      { name: "IT Consulting", href: "/services/it-consulting" },
+    ]
+  },
+  {
+    h: "Products",
+    links: [
+      { name: "SmartGRC", href: "/products/smart-grc" },
+      { name: "Smart Orion", href: "/products/smart-orion" },
+      { name: "Smart Crypto Exchange", href: "/products/smart-crypto-exchange" }
+    ]
+  },
+  {
+    h: "Industries",
+    links: [
+      { name: "Banking & Finance", href: "/industries/finance" },
+      { name: "Healthcare", href: "/industries/healthcare" },
+      { name: "Government", href: "/industries/government" },
+      { name: "Education", href: "/industries/education" },
+      { name: "Manufacturing", href: "/industries/manufacturing" },
+      { name: "Retail & E-commerce", href: "/industries/retail" },
+      { name: "Logistics", href: "/industries/logistics" }
+    ]
+  },
+  {
+    h: "Company",
+    links: [
+      { name: "About Us", href: "/about" },
+      { name: "Contact", href: "/contact" }
+    ]
+  }
 ];
 
 export default function Footer() {
@@ -30,11 +65,11 @@ export default function Footer() {
               <h4 style={{ fontFamily:T.sans, fontSize:10, fontWeight:700, textTransform:"uppercase", letterSpacing:"0.15em", color:T.textMuted, marginBottom:16 }}>{col.h}</h4>
               <ul style={{ listStyle:"none", padding:0, margin:0 }}>
                 {col.links.map(l => (
-                  <li key={l} style={{ marginBottom:9 }}>
-                    <a href="#" style={{ fontFamily:T.sans, fontSize:13, color:"rgba(122,172,172,0.52)", textDecoration:"none", fontWeight:300, transition:"color 0.2s" }}
+                  <li key={l.name} style={{ marginBottom:9 }}>
+                    <Link href={l.href} style={{ fontFamily:T.sans, fontSize:13, color:"rgba(122,172,172,0.52)", textDecoration:"none", fontWeight:300, transition:"color 0.2s" }}
                       onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = T.textPrimary; }}
                       onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "rgba(122,172,172,0.52)"; }}
-                    >{l}</a>
+                    >{l.name}</Link>
                   </li>
                 ))}
               </ul>

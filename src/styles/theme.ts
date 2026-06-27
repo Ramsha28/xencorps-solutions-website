@@ -1,39 +1,39 @@
 // ─── Design Tokens ────────────────────────────────────────────────────────────
 export const T = {
-  // Primary brand — navy/indigo family (from reference)
-  navy:           "#3D52A0",
-  navyLight:      "#7091E6",
-  navyMid:        "#8697C4",
-  navyDim:        "#2A3A70",
-  navyGlow:       "rgba(61,82,160,0.20)",
-  navyGlowStrong: "rgba(61,82,160,0.38)",
-  navyFaint:      "rgba(61,82,160,0.07)",
+  // Primary brand — brighter teal/emerald family (ServiceNow / Stripe-like feel)
+  navy:           "#00C2A0",
+  navyLight:      "#5EEAD4",
+  navyMid:        "#99F6E4",
+  navyDim:        "#0F766E",
+  navyGlow:       "rgba(0,194,160,0.20)",
+  navyGlowStrong: "rgba(0,194,160,0.38)",
+  navyFaint:      "rgba(0,194,160,0.07)",
 
-  // Backgrounds — dark
-  ink:            "#0D1B3E",
-  inkMid:         "#112254",
-  inkSoft:        "#1A2F6B",
+  // Backgrounds — dark (Pine/Teal black)
+  ink:            "#051C1A",
+  inkMid:         "#092B28",
+  inkSoft:        "#0E3D38",
 
-  // Backgrounds — light
-  mist:           "#EDE8F5",
-  mistDim:        "#D8D0EC",
+  // Backgrounds — light (Mint mist)
+  mist:           "#F0FDFA",
+  mistDim:        "#CCFBF1",
 
   // Text
   white:          "#FFFFFF",
-  textPrimary:    "#F5F6FC",
-  textSecondary:  "#ADBBDA",
-  textMuted:      "#7091E6",
+  textPrimary:    "#F2FDFB",
+  textSecondary:  "#99EAD8",
+  textMuted:      "#14B8A6",
 
-  // Accent — kept as one warm highlight for CTAs
-  orange:         "#F06830",
+  // Accent — bright amber/orange highlight for CTAs
+  orange:         "#FF6D00",
 
   // Aliases — these replace T.teal throughout all components
-  teal:           "#3D52A0",
-  tealLight:      "#7091E6",
-  tealDim:        "#2A3A70",
-  tealGlow:       "rgba(61,82,160,0.20)",
-  tealGlowStrong: "rgba(61,82,160,0.38)",
-  tealFaint:      "rgba(61,82,160,0.07)",
+  teal:           "#00C2A0",
+  tealLight:      "#5EEAD4",
+  tealDim:        "#0F766E",
+  tealGlow:       "rgba(0,194,160,0.20)",
+  tealGlowStrong: "rgba(0,194,160,0.38)",
+  tealFaint:      "rgba(0,194,160,0.07)",
 
   // Typography
   display:        '"Playfair Display", Georgia, serif',

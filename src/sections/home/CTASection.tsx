@@ -25,7 +25,6 @@ export default function CTASection() {
               {[
                 { label:"Schedule a Consultation", primary:true },
                 { label:"Explore Our Platforms",   primary:false },
-                { label:"View Case Studies",        primary:false },
               ].map(btn => (
                 <motion.a key={btn.label} href="#" whileHover={{ scale:1.02 }}
                   style={{

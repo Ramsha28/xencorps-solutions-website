@@ -11,8 +11,6 @@ import ProductsSection from "../../sections/home/ProductsSection";
 import WhyChooseUs from "../../sections/home/WhyChooseUs";
 import IndustriesSection from "../../sections/home/IndustriesSection";
 import DeliveryProcess from "../../sections/home/DeliveryProcess";
-import CaseStudiesSection from "../../sections/home/CaseStudiesSection";
-import InsightsSection from "../../sections/home/InsightsSection";
 import CTASection from "../../sections/home/CTASection";
 import { T } from "../../styles/theme";
 
@@ -35,8 +33,6 @@ export default function XencorpHomepage() {
       <WhyChooseUs />
       <IndustriesSection />
       <DeliveryProcess />
-      <CaseStudiesSection />
-      <InsightsSection />
       <CTASection />
       <Footer />
     </main>
