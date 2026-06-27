@@ -57,7 +57,7 @@ export default function Contact() {
       <Navigation />
 
       {/* Hero Section */}
-      <section style={{ position: "relative", minHeight: "55vh", display: "flex", alignItems: "center", overflow: "hidden", background: `radial-gradient(circle at 70% 30%, ${T.navyDim} 0%, ${T.ink} 70%)` }}>
+      <section style={{ position: "relative", minHeight: "55vh", display: "flex", alignItems: "center", overflow: "hidden", background: T.ink }}>
         <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 36px", paddingTop: 128, paddingBottom: 64, width: "100%", position: "relative", zIndex: 2 }}>
           <div style={{ maxWidth: 760 }}>
             <motion.div
@@ -127,13 +127,13 @@ export default function Contact() {
                     <div style={{ border: `1px solid ${T.mistDim}`, background: T.mist, padding: 24, borderRadius: 8 }}>
                       <span style={{ fontSize: 10, fontWeight: 700, color: T.textMuted, textTransform: "uppercase", letterSpacing: "0.12em", display: "block", marginBottom: 8 }}>Primary Hub</span>
                       <h4 style={{ fontSize: 15, fontWeight: 600, color: T.ink, marginBottom: 6 }}>Lahore, Pakistan</h4>
-                      <p style={{ fontSize: 13, color: "#3D5E5E", fontWeight: 300 }}>Enterprise software house & consultancy delivery core.</p>
+                      <p style={{ fontSize: 13, color: T.textSecondaryLight, fontWeight: 300 }}>Enterprise software house & consultancy delivery core.</p>
                     </div>
 
                     <div style={{ border: `1px solid ${T.mistDim}`, background: T.mist, padding: 24, borderRadius: 8 }}>
                       <span style={{ fontSize: 10, fontWeight: 700, color: T.textMuted, textTransform: "uppercase", letterSpacing: "0.12em", display: "block", marginBottom: 8 }}>Operational Hours</span>
                       <h4 style={{ fontSize: 15, fontWeight: 600, color: T.ink, marginBottom: 6 }}>Mon – Sat</h4>
-                      <p style={{ fontSize: 13, color: "#3D5E5E", fontWeight: 300 }}>9:00 AM – 7:00 PM PKT<br />(4:00 AM – 2:00 PM GMT)</p>
+                      <p style={{ fontSize: 13, color: T.textSecondaryLight, fontWeight: 300 }}>9:00 AM – 7:00 PM PKT<br />(4:00 AM – 2:00 PM GMT)</p>
                     </div>
                   </div>
                 </div>
@@ -144,15 +144,15 @@ export default function Contact() {
                   <h3 style={{ fontSize: 18, fontWeight: 600, color: T.ink, marginBottom: 18, borderBottom: `1px solid ${T.mistDim}`, paddingBottom: 10 }}>Strategic Channels</h3>
                   <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
                     <div style={{ display: "flex", justifyContent: "space-between", fontSize: 14 }}>
-                      <span style={{ fontWeight: 600, color: "#3D5E5E" }}>Client Relations:</span>
+                      <span style={{ fontWeight: 600, color: T.textSecondaryLight }}>Client Relations:</span>
                       <span style={{ fontFamily: T.sans, color: T.teal }}>info@xencorpsolutions.com</span>
                     </div>
                     <div style={{ display: "flex", justifyContent: "space-between", fontSize: 14 }}>
-                      <span style={{ fontWeight: 600, color: "#3D5E5E" }}>Enterprise RFP / Sales:</span>
+                      <span style={{ fontWeight: 600, color: T.textSecondaryLight }}>Enterprise RFP / Sales:</span>
                       <span style={{ fontFamily: T.sans, color: T.teal }}>sales@xencorpsolutions.com</span>
                     </div>
                     <div style={{ display: "flex", justifyContent: "space-between", fontSize: 14 }}>
-                      <span style={{ fontWeight: 600, color: "#3D5E5E" }}>Careers & Talent:</span>
+                      <span style={{ fontWeight: 600, color: T.textSecondaryLight }}>Careers & Talent:</span>
                       <span style={{ fontFamily: T.sans, color: T.teal }}>careers@xencorpsolutions.com</span>
                     </div>
                   </div>
@@ -164,7 +164,7 @@ export default function Contact() {
             <Reveal delay={0.15}>
               <div style={{ border: `1px solid ${T.mistDim}`, background: T.white, padding: "48px 44px", borderRadius: 10, boxShadow: "0 10px 40px rgba(0,0,0,0.03)" }}>
                 <h3 style={{ fontSize: 22, fontWeight: 700, color: T.ink, marginBottom: 6, letterSpacing: "-0.015em" }}>Enterprise Intake Form</h3>
-                <p style={{ fontSize: 13.5, color: "#3D5E5E", marginBottom: 32, fontWeight: 300 }}>Submit your details and an advisor will contact you shortly.</p>
+                <p style={{ fontSize: 13.5, color: T.textSecondaryLight, marginBottom: 32, fontWeight: 300 }}>Submit your details and an advisor will contact you shortly.</p>
 
                 {formStatus === "success" ? (
                   <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} style={{ padding: "36px 0", textAlign: "center" }}>
@@ -172,7 +172,7 @@ export default function Contact() {
                       <svg width="28" height="28" fill="none" stroke="#00A370" viewBox="0 0 24 24" strokeWidth="2"><polyline points="20 6 9 17 4 12"/></svg>
                     </div>
                     <h4 style={{ fontSize: 18, fontWeight: 600, color: T.ink, marginBottom: 8 }}>Inquiry Submitted</h4>
-                    <p style={{ fontSize: 13.5, color: "#3D5E5E", lineHeight: 1.6, fontWeight: 300 }}>Thank you for reaching out. A systems engineer or partner advisor will contact you within 24 business hours.</p>
+                    <p style={{ fontSize: 13.5, color: T.textSecondaryLight, lineHeight: 1.6, fontWeight: 300 }}>Thank you for reaching out. A systems engineer or partner advisor will contact you within 24 business hours.</p>
                     <button onClick={() => setFormStatus("idle")} style={{ marginTop: 24, padding: "9px 20px", border: `1.5px solid ${T.mistDim}`, borderRadius: 100, background: "transparent", color: T.tealDim, fontSize: 12.5, fontWeight: 600 }}>Send Another Message</button>
                   </motion.div>
                 ) : (
@@ -330,7 +330,7 @@ export default function Contact() {
                         transition={{ duration: 0.25 }}
                         style={{ overflow: "hidden" }}
                       >
-                        <p style={{ padding: "0 30px 24px", fontSize: 14, color: "#3D5E5E", lineHeight: 1.7, fontWeight: 300 }}>{item.a}</p>
+                        <p style={{ padding: "0 30px 24px", fontSize: 14, color: T.textSecondaryLight, lineHeight: 1.7, fontWeight: 300 }}>{item.a}</p>
                       </motion.div>
                     )}
                   </AnimatePresence>

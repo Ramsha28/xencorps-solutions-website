@@ -32,7 +32,7 @@ export default function DeliveryProcess() {
                   {String(i+1).padStart(2,"0")}
                 </div>
                 <h3 style={{ fontFamily:T.sans, fontSize:15, fontWeight:600, color:T.ink, marginBottom:9, letterSpacing:"-0.01em" }}>{s.l}</h3>
-                <p style={{ fontFamily:T.sans, fontSize:12.5, color:"#3D5E5E", lineHeight:1.66, fontWeight:300 }}>{s.d}</p>
+                <p style={{ fontFamily:T.sans, fontSize:12.5, color:T.textSecondaryLight, lineHeight:1.66, fontWeight:300 }}>{s.d}</p>
               </motion.div>
             </Reveal>
           ))}

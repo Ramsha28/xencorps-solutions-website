@@ -49,7 +49,7 @@ export default function ModelsPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section style={{ position: "relative", minHeight: "55vh", display: "flex", alignItems: "center", overflow: "hidden", background: `radial-gradient(circle at 70% 30%, ${T.navyDim} 0%, ${T.ink} 70%)` }}>
+      <section style={{ position: "relative", minHeight: "55vh", display: "flex", alignItems: "center", overflow: "hidden", background: T.ink }}>
         <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 36px", paddingTop: 128, paddingBottom: 64, width: "100%", position: "relative", zIndex: 2 }}>
           <div style={{ maxWidth: 760 }}>
             <motion.div
@@ -130,7 +130,7 @@ export default function ModelsPage() {
                     </div>
                   </div>
 
-                  <div style={{ borderTop: `1px solid ${T.mistDim}`, paddingTop: 18, fontSize: 13, color: "#3D5E5E", fontWeight: 300 }}>
+                  <div style={{ borderTop: `1px solid ${T.mistDim}`, paddingTop: 18, fontSize: 13, color: T.textSecondaryLight, fontWeight: 300 }}>
                     <span style={{ fontWeight: 600, color: T.ink }}>Core Business ROI:</span> {model.benefit}
                   </div>
                 </div>
@@ -142,7 +142,7 @@ export default function ModelsPage() {
       </section>
 
       {/* CTA Section */}
-      <section style={{ background: `linear-gradient(135deg, ${T.ink} 0%, ${T.navyDim} 100%)`, padding: "96px 0", color: T.white, textAlign: "center" }}>
+      <section style={{ background: T.ink, padding: "96px 0", color: T.white, textAlign: "center" }}>
         <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 36px" }}>
           <Reveal>
             <h2 style={{ fontFamily: T.display, fontSize: "clamp(26px, 3.2vw, 44px)", fontWeight: 700, color: T.white, marginBottom: 16 }}>Which Model Fits Your Project?</h2>

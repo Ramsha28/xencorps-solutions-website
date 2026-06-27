@@ -9,7 +9,7 @@ export default function BusinessImpact() {
   const metrics = [
     { v: 60,  s: "%",     label: "Compliance Workload Reduction", sub: "via SmartGRC deployment",      color: T.navyLight },
     { v: 35,  s: "%",     label: "Procurement Cost Savings",      sub: "Smart Orion multi-branch ERP", color: T.navyLight },
-    { v: 1,   s: "ms",    label: "Order Matching Latency",        sub: "Smart Crypto Exchange engine",  p: "<", color: T.orange },
+    { v: 1,   s: "ms",    label: "Order Matching Latency",        sub: "Smart Crypto Exchange engine",  p: "<", color: "orange" },
     { v: 90,  s: " days", label: "To Full Audit Readiness",       sub: "Financial services GRC impl.",  color: T.navyLight },
   ];
 
@@ -19,14 +19,14 @@ export default function BusinessImpact() {
         <Reveal>
           <div style={{ marginBottom: 60 }}>
             <p style={{ fontFamily: T.sans, fontSize: 11, fontWeight: 600, color: T.navyLight, textTransform: "uppercase", letterSpacing: "0.16em", marginBottom: 14 }}>Business Impact</p>
-            <h2 style={{ fontFamily: T.sans, fontSize: "clamp(28px, 3.6vw, 48px)", fontWeight: 700, color: T.textPrimary, letterSpacing: "-0.025em", lineHeight: 1.12 }}>
+            <h2 style={{ fontFamily: T.sans, fontSize: "clamp(28px, 3.6vw, 48px)", fontWeight: 700, color: T.white, letterSpacing: "-0.025em", lineHeight: 1.12 }}>
               Results That Move<br/>
               <span style={{ color: T.navyLight }}>Enterprise Needles</span>
             </h2>
           </div>
         </Reveal>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 1, background: "rgba(112,145,230,0.09)" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 1, background: "rgba(255, 255, 255, 0.08)" }}>
           {metrics.map((m) => (
             <motion.div
               key={m.label}
@@ -37,8 +37,8 @@ export default function BusinessImpact() {
                 {m.p && <span style={{ fontSize: "0.52em", verticalAlign: "top", marginTop: "0.18em", display: "inline-block" }}>{m.p}</span>}
                 <AnimCounter target={m.v} suffix={m.s}/>
               </div>
-              <div style={{ fontFamily: T.sans, fontSize: 14.5, fontWeight: 600, color: T.textPrimary, lineHeight: 1.4, marginBottom: 6 }}>{m.label}</div>
-              <div style={{ fontFamily: T.sans, fontSize: 12.5, color: T.textMuted, fontWeight: 400 }}>{m.sub}</div>
+              <div style={{ fontFamily: T.sans, fontSize: 14.5, fontWeight: 600, color: T.white, lineHeight: 1.4, marginBottom: 6 }}>{m.label}</div>
+              <div style={{ fontFamily: T.sans, fontSize: 12.5, color: "rgba(255, 255, 255, 0.7)", fontWeight: 400 }}>{m.sub}</div>
             </motion.div>
           ))}
         </div>

@@ -1,39 +1,51 @@
 // ─── Design Tokens ────────────────────────────────────────────────────────────
 export const T = {
-  // Primary brand — brighter teal/emerald family (ServiceNow / Stripe-like feel)
-  navy:           "#00C2A0",
-  navyLight:      "#5EEAD4",
-  navyMid:        "#99F6E4",
-  navyDim:        "#0F766E",
-  navyGlow:       "rgba(0,194,160,0.20)",
-  navyGlowStrong: "rgba(0,194,160,0.38)",
-  navyFaint:      "rgba(0,194,160,0.07)",
+  // Primary brand — emerald green enterprise accent
+  navy:           "#22C55E",
+  navyLight:      "#6EE7A0",
+  navyMid:        "#9AA7A0",
+  navyDim:        "#15803D",
+  navyGlow:       "rgba(34,197,94,0.18)",
+  navyGlowStrong: "rgba(34,197,94,0.28)",
+  navyFaint:      "rgba(34,197,94,0.08)",
 
-  // Backgrounds — dark (Pine/Teal black)
-  ink:            "#051C1A",
-  inkMid:         "#092B28",
-  inkSoft:        "#0E3D38",
+  // Backgrounds — dark (primary dark background)
+  ink:            "#0B0F14",
+  inkMid:         "#11161D",
+  inkSoft:        "#1A222B",
 
-  // Backgrounds — light (Mint mist)
-  mist:           "#F0FDFA",
-  mistDim:        "#CCFBF1",
+  // Backgrounds — light (mist surfaces)
+  mist:           "#F7F9F8",
+  mistDim:        "#EEF2F0",
 
-  // Text
+  // Borders
+  line:           "rgba(255,255,255,0.08)",
+
+  // Glows
+  glow:           "rgba(34,197,94,0.18)",
+
+  // Text / Legacy Aliases
   white:          "#FFFFFF",
-  textPrimary:    "#F2FDFB",
-  textSecondary:  "#99EAD8",
-  textMuted:      "#14B8A6",
+  textPrimary:    "#22C55E",      // Brand green for legacy accents/headers
+  textSecondary:  "#F5F7F6",      // Legacy light text for dark sections
+  textMuted:      "#15803D",      // Legacy kicker green
 
-  // Accent — bright amber/orange highlight for CTAs
-  orange:         "#FF6D00",
+  // Explicit text tokens for WCAG AA contrast compliance
+  textPrimaryLight: "#0B0F14",     // Primary dark text (on light)
+  textSecondaryLight: "#5B6B63",   // Secondary dark text (on light)
+  textOnDark:      "#F5F7F6",     // Primary light text (on dark)
+  textOnDarkSecondary: "#9AA7A0", // Secondary light text (on dark)
 
-  // Aliases — these replace T.teal throughout all components
-  teal:           "#00C2A0",
-  tealLight:      "#5EEAD4",
-  tealDim:        "#0F766E",
-  tealGlow:       "rgba(0,194,160,0.20)",
-  tealGlowStrong: "rgba(0,194,160,0.38)",
-  tealFaint:      "rgba(0,194,160,0.07)",
+  // Accent
+  orange:         "#22C55E",
+
+  // Aliases
+  teal:           "#22C55E",
+  tealLight:      "#6EE7A0",
+  tealDim:        "#15803D",
+  tealGlow:       "rgba(34,197,94,0.18)",
+  tealGlowStrong: "rgba(34,197,94,0.28)",
+  tealFaint:      "rgba(34,197,94,0.08)",
 
   // Typography
   display:        '"Playfair Display", Georgia, serif',

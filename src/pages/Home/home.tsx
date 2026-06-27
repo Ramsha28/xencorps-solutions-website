@@ -7,7 +7,6 @@ import MarqueeStrip from "../../sections/home/MarqueeStrip";
 import BusinessImpact from "../../sections/home/BusinessImpact";
 import ServicesSection from "../../sections/home/ServicesSection";
 import EcosystemSection from "../../sections/home/EcosystemSection";
-import ProductsSection from "../../sections/home/ProductsSection";
 import WhyChooseUs from "../../sections/home/WhyChooseUs";
 import IndustriesSection from "../../sections/home/IndustriesSection";
 import DeliveryProcess from "../../sections/home/DeliveryProcess";
@@ -29,7 +28,6 @@ export default function XencorpHomepage() {
       <BusinessImpact />
       <ServicesSection />
       <EcosystemSection />
-      <ProductsSection />
       <WhyChooseUs />
       <IndustriesSection />
       <DeliveryProcess />
