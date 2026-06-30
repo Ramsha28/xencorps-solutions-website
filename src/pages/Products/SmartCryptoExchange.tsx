@@ -222,6 +222,18 @@ const faqs = [
   {
     q: "Does the platform integrate bank deposits?",
     a: "Yes. Smart Crypto Exchange provides API connections to credit card processors, payment networks, and international bank wires."
+  },
+  {
+    q: "What KYC/AML verification providers are supported?",
+    a: "We provide built-in hooks for leading identity verifiers like Sumsub, Onfido, and Persona, as well as blockchain transaction screening services like Chainalysis and Elliptic to block high-risk addresses."
+  },
+  {
+    q: "Can the platform handle custom utility tokens or fiat-backed stablecoins?",
+    a: "Yes. The system ledger is multi-asset. You can configure and list custom ERC-20, BEP-20, TRC-20, or custom gas-fee tokens, alongside major fiat assets and standard stablecoins."
+  },
+  {
+    q: "Is the database ledger tamper-proof?",
+    a: "Yes. All order matching balances and transfer events are recorded in a double-entry ledger with cryptographic chaining. Database modifications without signed transactions trigger immediate system-wide security lockouts."
   }
 ];
 

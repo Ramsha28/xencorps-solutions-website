@@ -24,7 +24,7 @@ export default function ServicesSection() {
           <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 60, flexWrap: "wrap", gap: 20 }}>
             <div>
               <p style={{ fontFamily: T.sans, fontSize: 11, fontWeight: 600, color: T.navy, textTransform: "uppercase", letterSpacing: "0.16em", marginBottom: 14 }}>Services</p>
-              <h2 style={{ fontFamily: T.sans, fontSize: "clamp(28px, 3.4vw, 46px)", fontWeight: 700, color: T.ink, letterSpacing: "-0.025em", lineHeight: 1.12 }}>Enterprise Practice Areas</h2>
+              <h2 style={{ fontFamily: T.sans, fontSize: "clamp(28px, 3.4vw, 46px)", fontWeight: 700, color: T.ink, letterSpacing: "-0.025em", lineHeight: 1.12 }}>Our Services</h2>
             </div>
             <Link href="/services" style={{ fontFamily: T.sans, fontSize: 13.5, fontWeight: 600, color: T.navy, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 6 }}>
               View All Services <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>

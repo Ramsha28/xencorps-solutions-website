@@ -219,6 +219,18 @@ const faqs = [
   {
     q: "Can we run this on a private cloud?",
     a: "Yes. Smart GRC can be deployed on our secure managed cloud or inside your company's own AWS/Azure/on-premise environments for total data control."
+  },
+  {
+    q: "How does Smart GRC handle AI model governance?",
+    a: "We incorporate specialized compliance checks based on emerging standards like the EU AI Act and NIST AI Risk Management Framework. This includes auditing model lineage, data bias reviews, and pipeline validation logs."
+  },
+  {
+    q: "Can we import our existing corporate policies and manuals?",
+    a: "Yes. Smart GRC features an AI-assisted ingestion engine that parses PDFs, Word docs, and spreadsheets, automatically mapping your policy text to regulatory controls and recommending updates where gaps exist."
+  },
+  {
+    q: "Is continuous evidence exporting supported for external auditors?",
+    a: "Yes. You can provision read-only auditor seats or schedule automated, cryptographically signed zip exports containing compliance evidence, security dashboards, and control logs for review."
   }
 ];
 

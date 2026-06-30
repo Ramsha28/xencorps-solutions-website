@@ -27,8 +27,18 @@ export default function HeroBg({ scrollYProgress }: HeroBgProps) {
         background: T.ink,
       }} />
 
+      {/* Full-screen background building image */}
+      <div style={{
+        position: "absolute",
+        inset: 0,
+        backgroundImage: "url('/images/hero-building.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center 30%",
+        opacity: 0.18,
+      }} />
+
       <motion.svg
-        style={{ position: "absolute", inset: 0, width: "100%", height: "100%", y: gridY }}
+        style={{ position: "absolute", inset: 0, width: "100%", height: "100%", y: gridY, zIndex: 1 }}
         viewBox="0 0 1440 900"
         preserveAspectRatio="xMidYMid slice"
         xmlns="http://www.w3.org/2000/svg"
@@ -107,15 +117,17 @@ export default function HeroBg({ scrollYProgress }: HeroBgProps) {
         <ellipse cx="1150" cy="200" rx="320" ry="260" fill="url(#orb)"/>
       </motion.svg>
 
-      {/* Bottom fade */}
+      {/* Bottom fade (blends body) */}
       <div style={{
         position: "absolute", bottom: 0, left: 0, right: 0, height: 160,
         background: `linear-gradient(to bottom, transparent, ${T.ink})`,
+        zIndex: 2,
       }}/>
-      {/* Left fade */}
+      {/* Left fade (insures text contrast - shadow) */}
       <div style={{
         position: "absolute", inset: 0,
         background: `linear-gradient(to right, ${T.ink} 0%, rgba(11, 15, 20, 0.7) 45%, transparent 100%)`,
+        zIndex: 2,
       }}/>
     </motion.div>
   );

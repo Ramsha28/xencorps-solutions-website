@@ -27,7 +27,9 @@ const cols = [
     links: [
       { name: "About Us", href: "/about" },
       { name: "Contact", href: "/contact" },
-      { name: "Case Studies", href: "/case-studies" }
+      { name: "Case Studies", href: "/case-studies" },
+      { name: "Industries Served", href: "/industries" },
+      { name: "Resources & Advisory", href: "/resources" }
     ]
   }
 ];

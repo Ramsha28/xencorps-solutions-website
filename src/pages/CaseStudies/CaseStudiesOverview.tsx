@@ -6,7 +6,7 @@ import Footer from "../../components/layout/Footer";
 import Reveal from "../../components/common/Reveal";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { caseStudiesList } from "../../constants/caseStudiesData";
+import ImagePlaceholder from "../../components/common/ImagePlaceholder";
 
 export default function CaseStudiesOverviewPage() {
   return (
@@ -136,109 +136,69 @@ export default function CaseStudiesOverviewPage() {
           }
         `}</style>
       </section>
-      
-      {/* 2. Case Studies Grid (White Section) */}
+           {/* 2. Case Studies Coming Soon (White Section) */}
       <section style={{ padding: "112px 0", background: T.white }}>
         <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 36px" }}>
-          <Reveal>
-            <div style={{ marginBottom: 64, textAlign: "center" }}>
-              <p style={{ fontFamily: T.sans, fontSize: 11, fontWeight: 700, color: T.navyDim, textTransform: "uppercase", letterSpacing: "0.16em", marginBottom: 14 }}>Enterprise Outcomes</p>
-              <h2 style={{ fontFamily: T.sans, fontSize: "clamp(26px, 3.2vw, 44px)", fontWeight: 700, color: T.textPrimaryLight, letterSpacing: "-0.025em", lineHeight: 1.1 }}>
-                Client Success Briefs
-              </h2>
-            </div>
-          </Reveal>
-          
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40 }} className="hero-grid-layout">
-            {caseStudiesList.map((cs, i) => (
-              <Reveal key={cs.slug} delay={i * 0.06}>
-                <motion.div
-                  whileHover={{ y: -8, boxShadow: "0 15px 30px rgba(0,0,0,0.06)" }}
-                  transition={{ duration: 0.25, ease: "easeOut" }}
-                  style={{
-                    background: T.white,
-                    border: "1px solid rgba(0, 0, 0, 0.06)",
-                    borderRadius: 10,
-                    overflow: "hidden",
-                    height: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-between",
-                    transition: "border-color 0.25s"
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = T.navy;
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = "rgba(0, 0, 0, 0.06)";
-                  }}
-                >
-                  <div>
-                    {/* Image/Industry Banner */}
-                    <div style={{ position: "relative", height: 180, background: T.mistDim, display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", borderBottom: "1px solid rgba(0, 0, 0, 0.05)" }}>
-                      <div style={{ position: "absolute", inset: 0, opacity: 0.1, backgroundImage: "linear-gradient(rgba(34, 197, 94, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(34, 197, 94, 0.15) 1px, transparent 1px)", backgroundSize: "20px 20px" }} />
-                      <div style={{ position: "absolute", bottom: 16, left: 20, right: 20, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                        <span style={{ fontSize: 9.5, fontWeight: 700, background: "rgba(34, 197, 94, 0.1)", color: T.navyDim, padding: "3px 8px", borderRadius: 100, border: "1px solid rgba(34, 197, 94, 0.2)", letterSpacing: "0.08em" }}>
-                          {cs.badge}
-                        </span>
-                        <span style={{ fontSize: 12, fontWeight: 600, color: T.textSecondaryLight }}>
-                          {cs.client}
-                        </span>
-                      </div>
-                      <span style={{ fontSize: 56 }}>📈</span>
-                    </div>
-
-                    <div style={{ padding: 32 }}>
-                      <span style={{ fontSize: 10.5, fontWeight: 700, color: T.navyDim, textTransform: "uppercase", letterSpacing: "0.15em", display: "block", marginBottom: 8 }}>
-                        {cs.industry}
-                      </span>
-                      <h3 style={{ fontFamily: T.sans, fontSize: 22, fontWeight: 700, color: T.textPrimaryLight, marginBottom: 12, letterSpacing: "-0.015em" }}>
-                        {cs.title}
-                      </h3>
-                      <p style={{ fontFamily: T.sans, fontSize: 14, color: T.textSecondaryLight, lineHeight: 1.6, fontWeight: 300, marginBottom: 20 }}>
-                        {cs.overviewDescription}
-                      </p>
-                      
-                      {/* Metric Previews */}
-                      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, borderTop: "1px solid rgba(0,0,0,0.06)", paddingTop: 20 }}>
-                        {cs.stats.map(st => (
-                          <div key={st.label}>
-                            <div style={{ fontSize: 18, fontWeight: 700, color: T.navyDim }}>{cs.slug === "zero-trust-banking-ledger" && st.label === "SEC Audit Compliance" ? "SEC" : st.value}</div>
-                            <div style={{ fontSize: 10, color: T.textSecondaryLight, fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.02em", marginTop: 2 }}>{st.label}</div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div style={{ padding: "0 32px 32px" }}>
-                    <Link
-                      href={`/case-studies/${cs.slug}`}
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: 6,
-                        color: T.navyDim,
-                        fontFamily: T.sans,
-                        fontSize: 13,
-                        fontWeight: 600,
-                        textDecoration: "none",
-                        transition: "color 0.2s"
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.color = T.navy;
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.color = T.navyDim;
-                      }}
-                    >
-                      <span>Read Case Study Analysis</span>
-                      <span style={{ fontSize: 15 }}>→</span>
-                    </Link>
-                  </div>
-                </motion.div>
+          <div style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: 56, alignItems: "center" }} className="hero-grid-layout">
+            <div>
+              <Reveal>
+                <p style={{ fontFamily: T.sans, fontSize: 11, fontWeight: 700, color: T.navyDim, textTransform: "uppercase", letterSpacing: "0.16em", marginBottom: 14 }}>
+                  Case Studies Portfolio
+                </p>
+                <h2 style={{ fontFamily: T.sans, fontSize: "clamp(28px, 3.4vw, 44px)", fontWeight: 700, color: T.textPrimaryLight, letterSpacing: "-0.025em", lineHeight: 1.15, marginBottom: 24 }}>
+                  Verified Enterprise Outcomes. <br />
+                  <span style={{ color: T.navyDim }}>Coming Soon.</span>
+                </h2>
+                <p style={{ fontFamily: T.sans, fontSize: 15.5, color: T.textSecondaryLight, lineHeight: 1.7, fontWeight: 300, marginBottom: 24 }}>
+                  We are currently compiling and auditing our client outcome data, system architecture flows, and performance benchmarks. 
+                  In strict compliance with our Non-Disclosure Agreements (NDAs) and corporate security mandates, all case details are carefully anonymized and verified by solution architects prior to publication.
+                </p>
+                <p style={{ fontFamily: T.sans, fontSize: 15.5, color: T.textSecondaryLight, lineHeight: 1.7, fontWeight: 300, marginBottom: 36 }}>
+                  Our upcoming case briefs will cover multi-branch ERP deployments, high-frequency FinTech order-book scalability, and automated GRC security compliance assessments across banking, logistics, and healthcare networks.
+                </p>
               </Reveal>
-            ))}
+              
+              <Reveal delay={0.1}>
+                <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+                  <Link href="/contact" style={{
+                    padding: "14px 30px",
+                    background: "#16A34A", color: T.white,
+                    fontFamily: T.sans, fontSize: 13.5, fontWeight: 600,
+                    borderRadius: 100, textDecoration: "none",
+                    boxShadow: "0 4px 14px rgba(22, 163, 74, 0.2)",
+                    transition: "background 0.2s"
+                  }}
+                    onMouseEnter={(e) => e.currentTarget.style.background = "#15803D"}
+                    onMouseLeave={(e) => e.currentTarget.style.background = "#16A34A"}
+                  >
+                    Talk to a Systems Expert
+                  </Link>
+                  <Link href="/contact" style={{
+                    padding: "13px 30px",
+                    border: "1.5px solid #16A34A",
+                    color: "#16A34A",
+                    fontFamily: T.sans, fontSize: 13.5, fontWeight: 600,
+                    borderRadius: 100, textDecoration: "none",
+                    transition: "all 0.2s"
+                  }}
+                    onMouseEnter={(e) => e.currentTarget.style.background = "rgba(22, 163, 74, 0.05)"}
+                    onMouseLeave={(e) => e.currentTarget.style.background = "transparent"}
+                  >
+                    Request Technical Profile
+                  </Link>
+                </div>
+              </Reveal>
+            </div>
+            
+            <Reveal delay={0.2}>
+              <ImagePlaceholder
+                aspectRatio="4/3"
+                label="Case Studies & Systems Auditing Portfolio"
+                sublabel="Target: 4:3 graphic rendering abstract server clusters, encrypted ledger transactions, and verified enterprise business outcome metrics"
+                iconType="analytics"
+                mode="light"
+              />
+            </Reveal>
           </div>
         </div>
       </section>

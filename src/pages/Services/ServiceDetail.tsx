@@ -64,8 +64,8 @@ const servicesDataMap: Record<string, ServiceData> = {
   "custom-software-development": {
     id: "custom-software-development",
     title: "Custom Software Development",
-    heroTitle: "Custom software engineered for <em>your specific workflows</em> — not a generic suite.",
-    heroLede: "Design, develop, and deploy proprietary platforms that align with your operational processes — ensuring 100% intellectual property ownership and zero vendor lock-in.",
+    heroTitle: "<em>Custom software</em> engineered for your specific workflows",
+    heroLede: "Design, develop, and deploy proprietary platforms that align with your operational processes ensuring 100% intellectual property ownership and zero vendor lock-in.",
     challengesKicker: "Business Challenges",
     challengesTitle: "Why off-the-shelf software falls short",
     challenges: [
@@ -121,7 +121,7 @@ const servicesDataMap: Record<string, ServiceData> = {
   "web-development": {
     id: "web-development",
     title: "Enterprise Web Development",
-    heroTitle: "High-performance web portals built for <em>sub-second responsiveness</em>.",
+    heroTitle: "Developing enterprise <em>web platforms</em> that streamline operations and drive digital growth",
     heroLede: "Modern reactive frontends coupled with secure database APIs to power your client portals, analytics dashboards, and web-based enterprise applications.",
     challengesKicker: "Performance Barriers",
     challengesTitle: "Why slow web applications damage operations",
@@ -178,7 +178,7 @@ const servicesDataMap: Record<string, ServiceData> = {
   "mobile-app-development": {
     id: "mobile-app-development",
     title: "Mobile App Development",
-    heroTitle: "Native-performance mobile apps built to <em>work anywhere, offline or online</em>.",
+    heroTitle: "Native-performance <em>mobile apps</em> built to work anywhere, offline or online",
     heroLede: "Frictionless iOS and Android apps powered by Flutter, engineered with local database caching for seamless operations in the field.",
     challengesKicker: "Operational Bottlenecks",
     challengesTitle: "Why mobile initiatives fail in the enterprise",
@@ -235,8 +235,8 @@ const servicesDataMap: Record<string, ServiceData> = {
   "ai-intelligent-systems": {
     id: "ai-intelligent-systems",
     title: "AI & Intelligent Systems",
-    heroTitle: "Intelligence embedded into <em>how the enterprise runs</em> — not a chatbot bolted on top.",
-    heroLede: "Predictive analytics, computer vision, and ML engineering built into the operational core of your business — the same approach powering risk prediction in SmartGRC and demand forecasting in Smart Orion.",
+    heroTitle: "Transform business operations with <em>AI powered solutions</em>, automation, and intelligent insights.",
+    heroLede: "Predictive analytics, computer vision, and ML engineering built into the operational core of your business.",
     challengesKicker: "Business Challenges",
     challengesTitle: "Why AI initiatives stall before they reach production",
     challenges: [
@@ -292,7 +292,7 @@ const servicesDataMap: Record<string, ServiceData> = {
   "erp-solutions": {
     id: "erp-solutions",
     title: "ERP Solutions & Business Automation",
-    heroTitle: "Unify all operational hubs into <em>one source of truth</em>.",
+    heroTitle: "Integrated <em>ERP solutions</em> that simplify processes and improve operational efficiency.",
     heroLede: "SAP and Odoo implementations customized to bridge sales cash registers, supply chain warehouses, and accounting ledgers in real time.",
     challengesKicker: "Operational Gaps",
     challengesTitle: "Why disconnected systems drain enterprise margins",
@@ -349,7 +349,7 @@ const servicesDataMap: Record<string, ServiceData> = {
   "e-commerce-solutions": {
     id: "e-commerce-solutions",
     title: "E-Commerce Solutions",
-    heroTitle: "E-commerce built for <em>conversion and instant scale</em>.",
+    heroTitle: "<em>E-commerce</em> built for conversion and instant scale",
     heroLede: "Headless commerce storefronts, custom checkout flows, and payment API integrations built to handle high promotional traffic without lag.",
     challengesKicker: "Conversion Blockers",
     challengesTitle: "Why generic storefront templates lose sales",
@@ -406,7 +406,7 @@ const servicesDataMap: Record<string, ServiceData> = {
   "data-center-development": {
     id: "data-center-development",
     title: "Data Center Development & IT Infrastructure",
-    heroTitle: "Hybrid infrastructure engineered for <em>99.999% system availability</em>.",
+    heroTitle: "Designing secure, scalable, and resilient infrastructure for <em>modern enterprises</em>.",
     heroLede: "Consultancy and planning for enterprise networks, container setups, and disaster recovery strategies that protect data sovereignty.",
     challengesKicker: "Infrastructure Risk",
     challengesTitle: "Why legacy servers restrict corporate growth",
@@ -463,7 +463,7 @@ const servicesDataMap: Record<string, ServiceData> = {
   "it-consultancy": {
     id: "it-consultancy",
     title: "IT Consultancy",
-    heroTitle: "Digital transformation roadmaps backed by <em>measured technical diagnostics</em>.",
+    heroTitle: "Enterprise <em>IT consulting</em> services that help businesses achieve digital transformation.",
     heroLede: "Documenting codebase quality, auditing security vulnerabilities, and designing digital strategies that align technical investments with business growth.",
     challengesKicker: "Strategic Blindspots",
     challengesTitle: "Why software investments fall short of executive goals",

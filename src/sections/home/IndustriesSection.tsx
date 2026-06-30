@@ -271,24 +271,7 @@ export default function IndustriesSection() {
           })}
         </motion.div>
 
-        <Reveal delay={0.25}>
-          <div className="industries-footnote">
-            <p
-              style={{
-                fontFamily: T.sans,
-                fontSize: 13.5,
-                color: T.textOnDarkSecondary,
-                lineHeight: 1.72,
-                fontWeight: 300,
-                margin: 0,
-              }}
-            >
-              Our consulting engagements and platform deployments are tailored to industry-specific
-              compliance frameworks, operational requirements, and digital transformation maturity —
-              whether you&apos;re a regulated bank, a government agency, or a global retailer.
-            </p>
-          </div>
-        </Reveal>
+        
       </div>
     </section>
   );

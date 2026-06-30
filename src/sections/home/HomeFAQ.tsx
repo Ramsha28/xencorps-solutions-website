@@ -7,36 +7,32 @@ import Reveal from "../../components/common/Reveal";
 
 const faqs = [
   {
-    q: "How long does system development typically take?",
-    a: "Timelines depend directly on product complexity and integration requirements. A specialized MVP prototype generally takes 8 to 12 weeks. Expansive, multi-branch ERP deployments, custom AI pipelines, or hybrid cloud infrastructures can span 6 to 12 months, executed in phased monthly releases."
+    q: "Who is Xencorp Solutions?",
+    a: "Xencorp Solutions is a premium enterprise technology consulting and custom software development firm. We bridge the gap between high-level management consulting and handcrafted systems engineering, serving clients globally with our strategic engineering center based in Lahore, Pakistan."
   },
   {
-    q: "Do you work with international clients and different time zones?",
-    a: "Yes, we operate a global delivery model. Our engineering and project teams align schedules, stand-ups, and sprint reviews with international time zones (including EST, PST, GMT, and CET) to ensure real-time collaboration."
+    q: "What does the company do and what systems do you build?",
+    a: "We deliver full-lifecycle custom software development, AI automation pipelines, ERP integrations, and IT advisory services. Alongside our custom consulting, we deploy three proprietary platform accelerators: SmartGRC (governance & compliance), Smart Orion (multi-branch ERP & POS), and Smart Crypto Exchange (institutional FinTech)."
   },
   {
-    q: "Can you modernize and scale our existing legacy software?",
-    a: "Yes. We perform technical diagnostics to audit legacy codebases, isolate dependencies, and bridge integration gaps. We systematically modernize the system by refactoring databases, containerizing code, and implementing modern REST APIs, ensuring zero operational downtime."
+    q: "What core operational problems does Xencorp Solutions solve?",
+    a: "We eliminate database sync delays, replace rigid legacy lock-ins, automate compliance auditing, and remove workflow friction. Our systems are engineered to reduce compliance workloads, slash inventory overhead, and optimize data throughput with zero down-time."
   },
   {
-    q: "Do you provide long-term software maintenance and SLA agreements?",
-    a: "Yes. We offer dedicated support models and SLA agreements. This covers continuous system health checks, database optimizations, security audits, framework upgrades, and continuous feature scaling."
+    q: "Who are your ideal clients?",
+    a: "Our ideal clients are mid-market companies and large global enterprises requiring robust, high-performance digital systems. We specialize in serving highly regulated sectors such as banking, finance, healthcare, logistics, public services, and retail where data security and compliance are paramount."
   },
   {
-    q: "How do new project engagements begin?",
-    a: "Engagements start with a Discovery & Diagnostic Workshop. Our architects map your workflows, design initial database structures, evaluate compliance needs, and deliver a complete project blueprint and roadmap."
+    q: "Why should we choose Xencorp Solutions over other technology firms?",
+    a: "We staff every project with senior architects and developers, ensuring executive-level engineering from day one. We grant 100% intellectual property ownership to our clients, deliver compliance-ready architectures, and offer modular proprietary platforms that accelerate rollout by up to 50% compared to pure custom builds."
   },
   {
-    q: "What compliance frameworks do your engineering practices adhere to?",
-    a: "Our team designs and builds systems with strict adherence to industry compliance standards. Depending on the project scope, we implement technical controls for HIPAA (healthcare data), SOC 2, ISO 27001 (information security), GDPR (data privacy), and PCI DSS (payment processing), including auditing ledgers and end-to-end data encryption."
-  },
-  {
-    q: "Do we own the intellectual property rights to the custom software you develop?",
-    a: "Yes, completely. Once the engagement terms are fulfilled, 100% of the custom codebase, database configurations, design assets, and deployment scripts are owned by your organization. We deliver proprietary solutions with no licensing fees or vendor lock-ins."
+    q: "How does a typical client engagement begin?",
+    a: "Engagements start with a Discovery & Diagnostic Workshop. Our solutions architects audit your current codebase, design target database and API blueprints, evaluate compliance requirements, and deliver a complete project roadmap and fixed-cost estimation."
   }
 ];
 
-export default function FAQSection() {
+export default function HomeFAQ() {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
   const toggle = (idx: number) => {
@@ -44,19 +40,19 @@ export default function FAQSection() {
   };
 
   return (
-    <section style={{ background: T.ink, padding: "112px 0", color: T.white }}>
-      <div style={{ maxWidth: 800, margin: "0 auto", padding: "0 36px" }}>
+    <section style={{ background: T.inkMid, padding: "112px 0", color: T.white, borderTop: `1px solid ${T.line}` }}>
+      <div style={{ maxWidth: 840, margin: "0 auto", padding: "0 36px" }}>
         
         <Reveal>
           <div style={{ textAlign: "center", marginBottom: 64 }}>
-            <span style={{ fontSize: 11, fontWeight: 700, color: T.tealLight, textTransform: "uppercase", letterSpacing: "0.14em", display: "block", marginBottom: 12 }}>
-              Practice FAQs
+            <span style={{ fontSize: 11, fontWeight: 700, color: T.navyLight, textTransform: "uppercase", letterSpacing: "0.14em", display: "block", marginBottom: 12 }}>
+              Enterprise FAQs
             </span>
             <h2 style={{ fontFamily: T.display, fontSize: "clamp(30px, 4vw, 44px)", fontWeight: 800, marginBottom: 18, letterSpacing: "-0.02em" }}>
               Frequently Asked Questions
             </h2>
-            <p style={{ fontSize: 15.5, color: T.textSecondary, fontWeight: 300, lineHeight: 1.6 }}>
-              Find quick answers regarding our engagement processes, development timelines, and software modernization practices.
+            <p style={{ fontSize: 15.5, color: T.textOnDarkSecondary, fontWeight: 300, lineHeight: 1.6 }}>
+              Find quick answers regarding our practice areas, proprietary platforms, ideal clients, and delivery models.
             </p>
           </div>
         </Reveal>
@@ -67,8 +63,8 @@ export default function FAQSection() {
             return (
               <Reveal key={idx}>
                 <div style={{
-                  background: T.inkMid,
-                  border: `1px solid ${isOpen ? "rgba(0,194,160,0.25)" : "rgba(0,194,160,0.08)"}`,
+                  background: T.ink,
+                  border: `1px solid ${isOpen ? "rgba(34,197,94,0.28)" : "rgba(255,255,255,0.06)"}`,
                   borderRadius: 12,
                   overflow: "hidden",
                   transition: "border-color 0.25s"
@@ -86,7 +82,8 @@ export default function FAQSection() {
                       alignItems: "center",
                       textAlign: "left",
                       color: T.white,
-                      outline: "none"
+                      outline: "none",
+                      cursor: "pointer"
                     }}
                   >
                     <span style={{ fontSize: 15.5, fontWeight: 600, fontFamily: T.sans, letterSpacing: "-0.01em", paddingRight: 20 }}>
@@ -95,7 +92,7 @@ export default function FAQSection() {
                     <motion.div
                       animate={{ rotate: isOpen ? 180 : 0 }}
                       transition={{ duration: 0.25 }}
-                      style={{ color: T.tealLight, flexShrink: 0 }}
+                      style={{ color: T.navyLight, flexShrink: 0 }}
                     >
                       <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
                         <polyline points="6 9 12 15 18 9" />
@@ -115,10 +112,10 @@ export default function FAQSection() {
                         <div style={{
                           padding: "0 30px 24px",
                           fontSize: 14,
-                          color: T.textSecondary,
+                          color: T.textOnDarkSecondary,
                           lineHeight: 1.68,
                           fontWeight: 300,
-                          borderTop: "1px solid rgba(0,194,160,0.05)"
+                          borderTop: "1px solid rgba(255,255,255,0.04)"
                         }}>
                           {faq.a}
                         </div>

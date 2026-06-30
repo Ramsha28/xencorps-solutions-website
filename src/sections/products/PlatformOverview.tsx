@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { T } from "../../styles/theme";
 import Reveal from "../../components/common/Reveal";
+import ImagePlaceholder from "../../components/common/ImagePlaceholder";
 
 interface PlatformOverviewProps {
   id: string;
@@ -53,6 +54,15 @@ export default function PlatformOverview({
                   <p style={{ fontFamily: T.sans, fontSize: 13, color: T.textSecondary, fontWeight: 300, lineHeight: 1.5 }}>
                     {audience}
                   </p>
+                </div>
+                <div style={{ marginTop: 8 }}>
+                  <ImagePlaceholder
+                    aspectRatio="16/9"
+                    label={`${name} Platform Architecture Blueprint`}
+                    sublabel={`Target: 16:9 technical flowchart showing database replica configuration, API caching layers, and web application clients for ${name}`}
+                    iconType="network"
+                    style={{ borderColor: `${accentColor}44` }}
+                  />
                 </div>
               </div>
             </Reveal>

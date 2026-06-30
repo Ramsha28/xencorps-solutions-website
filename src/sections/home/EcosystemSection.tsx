@@ -23,7 +23,7 @@ export default function EcosystemSection() {
           <p style={{ fontFamily: T.sans, fontSize: 11, fontWeight: 600, color: T.navyLight, textTransform: "uppercase", letterSpacing: "0.16em", marginBottom: 14 }}>Ecosystem</p>
           <h2 style={{ fontFamily: T.sans, fontSize: "clamp(28px, 3.6vw, 50px)", fontWeight: 700, color: T.white, letterSpacing: "-0.025em", lineHeight: 1.1, marginBottom: 16 }}>Enterprise Intelligence Ecosystem</h2>
           <p style={{ fontFamily: T.sans, fontSize: 16, color: "rgba(255, 255, 255, 0.72)", maxWidth: 560, margin: "0 auto", fontWeight: 300, lineHeight: 1.75 }}>
-            Three proprietary platforms, six consulting practices, and a unified AI backbone — engineered to work independently or as an integrated enterprise intelligence layer.
+            Three proprietary platforms, six consulting practices, and a unified AI backbone that help enterprises modernize operations
           </p>
         </Reveal>
 

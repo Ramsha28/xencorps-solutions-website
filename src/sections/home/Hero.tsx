@@ -4,6 +4,7 @@ import { T } from "../../styles/theme";
 import AnimCounter from "../../components/common/AnimCounter";
 import HeroBg from "./HeroBg";
 import Link from "next/link";
+import heroBuilding from "../../assets/images/hompage hero banner.png";
 
 export default function Hero() {
   const { scrollYProgress } = useScroll();
@@ -18,8 +19,22 @@ export default function Hero() {
     <section style={{ position: "relative", minHeight: "100vh", background: T.ink, display: "flex", alignItems: "center", overflow: "hidden" }}>
       <HeroBg scrollYProgress={scrollYProgress} />
 
-      <div style={{ position: "relative", maxWidth: 1300, margin: "0 auto", padding: "0 36px", paddingTop: 128, paddingBottom: 96, width: "100%" }}>
-        <div style={{ maxWidth: 660 }}>
+      <style>{`
+        @media (max-width: 991px) {
+          .hero-content-layout {
+            text-align: center;
+          }
+          .hero-content-layout > div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+          }
+        }
+      `}</style>
+      <div style={{ position: "relative", maxWidth: 1300, margin: "0 auto", padding: "0 36px", paddingTop: 128, paddingBottom: 96, width: "100%", zIndex: 3 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 56 }} className="hero-content-layout">
+          <div style={{ maxWidth: 660 }}>
 
           {/* Badge */}
           <motion.div
@@ -69,7 +84,7 @@ export default function Hero() {
               letterSpacing: "0.005em",
             }}
           >
-            Xencorpsolutions fuses deep consulting expertise with three proprietary enterprise platforms — SmartGRC, Smart Orion, and Smart Crypto Exchange — to transform how organizations govern, operate, and scale.
+            Delivering enterprise software, intelligent automation, and technology consulting that help businesses innovate, optimize operations, and scale with confidence.
           </motion.p>
 
           {/* CTAs */}
@@ -132,6 +147,7 @@ export default function Hero() {
             ))}
           </motion.div>
 
+          </div>
         </div>
       </div>
 
@@ -139,7 +155,7 @@ export default function Hero() {
       <motion.div
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
-        style={{ position: "absolute", bottom: 36, left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}
+        style={{ position: "absolute", bottom: 36, left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: 6, zIndex: 3 }}
       >
         <span style={{ fontFamily: T.sans, fontSize: 10, color: T.textOnDarkSecondary, textTransform: "uppercase", letterSpacing: "0.16em" }}>Scroll</span>
         <div style={{ width: 1, height: 32, background: `linear-gradient(to bottom, #16A34A, transparent)` }}/>

@@ -24,19 +24,44 @@ export default function WhyChooseUs() {
             </h2>
           </div>
         </Reveal>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 24 }}>
-          {reasons.map((r, i) => (
-            <Reveal key={r.n} delay={i * 0.07}>
-              <motion.div whileHover={{ background: T.mistDim }}
-                style={{ background: T.mist, border: "1px solid rgba(15, 23, 42, 0.05)", borderRadius: 12, padding: "40px 34px", transition: "background 0.3s", position: "relative", overflow: "hidden" }}
-              >
-                <motion.div initial={{ scaleX: 0 }} whileHover={{ scaleX: 1 }} style={{ position: "absolute", top: 0, left: 0, right: 0, height: 2, background: "#16A34A", transformOrigin: "left", transition: "transform 0.3s ease" }}/>
-                <div style={{ fontFamily: T.sans, fontSize: 12, fontWeight: 600, color: "rgba(22, 163, 74, 0.4)", marginBottom: 16, letterSpacing: "0.05em" }}>{r.n}</div>
-                <h3 style={{ fontFamily: T.sans, fontSize: 16.5, fontWeight: 600, color: "#0F172A", lineHeight: 1.38, marginBottom: 12, letterSpacing: "-0.015em" }}>{r.t}</h3>
-                <p style={{ fontFamily: T.sans, fontSize: 13.5, color: "#475569", lineHeight: 1.72, fontWeight: 300 }}>{r.b}</p>
-              </motion.div>
-            </Reveal>
-          ))}
+        <style>{`
+          @media (max-width: 991px) {
+            .why-us-grid {
+              grid-template-columns: 1fr !important;
+              gap: 40px !important;
+            }
+            .reasons-cards-grid {
+              grid-template-columns: 1fr !important;
+            }
+            .why-us-image {
+              min-height: 320px !important;
+            }
+          }
+        `}</style>
+        <div style={{ display: "grid", gridTemplateColumns: "1.25fr 0.75fr", gap: 40, alignItems: "stretch" }} className="why-us-grid">
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }} className="reasons-cards-grid">
+            {reasons.map((r, i) => (
+              <Reveal key={r.n} delay={i * 0.07}>
+                <motion.div whileHover={{ background: T.mistDim }}
+                  style={{ background: T.mist, border: "1px solid rgba(15, 23, 42, 0.05)", borderRadius: 12, padding: "32px 28px", transition: "background 0.3s", position: "relative", overflow: "hidden", height: "100%" }}
+                >
+                  <motion.div initial={{ scaleX: 0 }} whileHover={{ scaleX: 1 }} style={{ position: "absolute", top: 0, left: 0, right: 0, height: 2, background: "#16A34A", transformOrigin: "left", transition: "transform 0.3s ease" }}/>
+                  <div style={{ fontFamily: T.sans, fontSize: 12, fontWeight: 600, color: "rgba(22, 163, 74, 0.4)", marginBottom: 14, letterSpacing: "0.05em" }}>{r.n}</div>
+                  <h3 style={{ fontFamily: T.sans, fontSize: 16, fontWeight: 600, color: "#0F172A", lineHeight: 1.35, marginBottom: 10, letterSpacing: "-0.015em" }}>{r.t}</h3>
+                  <p style={{ fontFamily: T.sans, fontSize: 13, color: "#475569", lineHeight: 1.65, fontWeight: 300 }}>{r.b}</p>
+                </motion.div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal delay={0.2}>
+            <div className="why-us-image" style={{ borderRadius: 16, overflow: "hidden", height: "100%", minHeight: 480 }}>
+              <img
+                src="/images/why%20choose%20us.png"
+                alt="Strategic Advisory & Engineering Lifecycle"
+                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+              />
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>

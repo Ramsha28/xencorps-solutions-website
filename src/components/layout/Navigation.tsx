@@ -103,8 +103,10 @@ function Navigation() {
   const links = [
     { name: "Services", href: "/services" },
     { name: "Products", href: "/products" },
+    { name: "Industries", href: "/industries" },
     { name: "Case Studies", href: "/case-studies" },
     { name: "About", href: "/about" },
+    { name: "Resources", href: "/resources" },
   ];
 
   const isNavLight = scrolled || activeMenu;
@@ -247,7 +249,7 @@ function Navigation() {
                     href="/services"
                     onClick={() => {
                       setHoveredLink(null);
-                      setIsMenuHovered(false);
+                      setIsMenuHovered(true);
                     }}
                     style={{
                       alignSelf: "flex-start",

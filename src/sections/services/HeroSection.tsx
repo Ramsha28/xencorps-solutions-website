@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { T } from "../../styles/theme";
 import Link from "next/link";
+import ImagePlaceholder from "../../components/common/ImagePlaceholder";
 
 export default function HeroSection() {
   return (
@@ -105,51 +106,16 @@ export default function HeroSection() {
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            style={{ display: "flex", justifyContent: "center", position: "relative" }}
+            transition={{ duration: 0.8, delay: 0.22 }}
+            style={{ width: "100%", maxWidth: 440, display: "flex", justifyContent: "center", position: "relative" }}
             className="hero-graphic"
           >
-            <motion.div
-              animate={{ y: [0, -12, 0] }}
-              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              style={{
-                width: "100%",
-                maxWidth: 360,
-                height: 360,
-                borderRadius: 24,
-                background: "rgba(9, 43, 40, 0.45)",
-                border: "1px solid rgba(0, 194, 160, 0.15)",
-                backdropFilter: "blur(10px)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                boxShadow: "0 24px 50px rgba(0,0,0,0.3)"
-              }}
-            >
-              {/* Graphic Design */}
-              <svg viewBox="0 0 100 100" style={{ width: "70%", height: "70%", stroke: T.tealLight, strokeWidth: 0.8, fill: "none" }}>
-                <circle cx="50" cy="50" r="40" strokeDasharray="3 3" opacity="0.3" />
-                <circle cx="50" cy="50" r="26" opacity="0.4" />
-                <path d="M50 10 L50 90 M10 50 L90 50" opacity="0.15" />
-                
-                {/* Node coordinates */}
-                <circle cx="50" cy="10" r="2.5" fill={T.teal} stroke="none" />
-                <circle cx="50" cy="90" r="2.5" fill={T.teal} stroke="none" />
-                <circle cx="10" cy="50" r="2.5" fill={T.teal} stroke="none" />
-                <circle cx="90" cy="50" r="2.5" fill={T.teal} stroke="none" />
-                
-                {/* Center Core */}
-                <rect x="42" y="42" width="16" height="16" rx="3" fill={T.ink} stroke={T.teal} strokeWidth="1.5" />
-                <circle cx="50" cy="50" r="3" fill={T.white} />
-
-                {/* Animated surrounding paths */}
-                <path d="M22 22 L42 42 M78 22 L58 42 M22 78 L42 58 M78 78 L58 58" opacity="0.5" />
-                <circle cx="22" cy="22" r="2" fill={T.tealLight} />
-                <circle cx="78" cy="22" r="2" fill={T.tealLight} />
-                <circle cx="22" cy="78" r="2" fill={T.tealLight} />
-                <circle cx="78" cy="78" r="2" fill={T.tealLight} />
-              </svg>
-            </motion.div>
+            <ImagePlaceholder
+              aspectRatio="4/3"
+              label="Service Operations Integration Platform"
+              sublabel="Target: 4:3 diagram mapping client systems to Xencorp cloud-native microservices, databases, and GRC audit checkpoints"
+              iconType="cloud"
+            />
           </motion.div>
         </div>
       </div>

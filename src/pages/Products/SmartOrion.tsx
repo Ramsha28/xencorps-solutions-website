@@ -222,6 +222,18 @@ const faqs = [
   {
     q: "Is multi-currency supported?",
     a: "Yes. The ERP ledger calculates real-time conversion rates matching tax and administrative records."
+  },
+  {
+    q: "How long does a typical Smart Orion implementation take?",
+    a: "The implementation timeline ranges from 12 to 24 weeks depending on the number of branches, size of warehouses, and complexity of legacy database migrations. We execute deployments in phases, beginning with inventory centralization."
+  },
+  {
+    q: "Can Smart Orion integrate with hardware barcode scanners and card readers?",
+    a: "Yes. Smart Orion POS supports standard serial, USB, and network-based barcode scanners, label printers, cash drawers, and major card reader terminals via local network sync drivers."
+  },
+  {
+    q: "What measures ensure the safety of our offline transactions?",
+    a: "Offline sales are cached in a secure client-side SQLite database utilizing local device encryption. A background worker periodically attempts to handshake with the primary ERP gateway, performing automated cryptographic reconciliation upon connection."
   }
 ];
 
