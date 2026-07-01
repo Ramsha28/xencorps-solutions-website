@@ -285,10 +285,7 @@ export default function SmartCryptoExchange() {
         accentColor={accent}
       />
 
-      <BusinessBenefits
-        benefits={benefits}
-        accentColor={accent}
-      />
+
 
       <IntegrationEcosystem
         integrations={integrations}

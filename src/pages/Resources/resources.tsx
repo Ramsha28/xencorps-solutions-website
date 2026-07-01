@@ -14,22 +14,19 @@ const resourcesList = [
     title: "Enterprise ERP Offline-Sync Models",
     category: "Technical Whitepaper",
     desc: "A deep-dive technical paper outlining SQLite local encryption, transaction caching mechanics, and background synchronization reconciliation algorithms.",
-    aspect: "4/3",
-    placeLabel: "ERP Whitepaper Placeholder"
+    img: "/images/resources/whitepaper-erp.png"
   },
   {
     title: "SOC 2 & HIPAA Security Compliance Checklist",
     category: "Compliance Guide",
     desc: "An itemized technical audit checklist outlining required Role-Based Access Controls, audit trail database schemes, and network encryption configurations.",
-    aspect: "4/3",
-    placeLabel: "Compliance Guide Placeholder"
+    img: "/images/resources/whitepaper-compliance.png"
   },
   {
     title: "Low-Latency FinTech Order Matching Engines",
     category: "System Blueprint",
     desc: "Architectural blueprint detailing in-memory transaction order-books, sub-millisecond matching socket structures, and secure multi-party computation (MPC) wallet custody.",
-    aspect: "4/3",
-    placeLabel: "FinTech Blueprint Placeholder"
+    img: "/images/resources/whitepaper-fintech.png"
   }
 ];
 
@@ -79,6 +76,17 @@ export default function ResourcesPage() {
 
       {/* Hero Section */}
       <section style={{ position: "relative", minHeight: "65vh", display: "flex", alignItems: "center", overflow: "hidden", background: T.ink }}>
+        {/* Background Image overlay */}
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: "url('/images/secondary-hero-bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 0.20,
+          pointerEvents: "none",
+          zIndex: 1
+        }} />
         {/* Subtle radial green glow in upper right */}
         <div style={{
           position: "absolute",
@@ -147,12 +155,7 @@ export default function ResourcesPage() {
               style={{ display: "flex", justifyContent: "center" }}
               className="hero-graphic"
             >
-              <ImagePlaceholder
-                aspectRatio="4/3"
-                label="Advisory Resources Catalog"
-                sublabel="Target: 4:3 graphic displaying abstract documentation nodes, system architectural graphs, and compliance checklists"
-                iconType="analytics"
-              />
+              
             </motion.div>
           </div>
         </div>
@@ -185,13 +188,13 @@ export default function ResourcesPage() {
                   justifyContent: "space-between"
                 }}>
                   <div>
-                    <ImagePlaceholder
-                      aspectRatio={res.aspect}
-                      label={res.placeLabel}
-                      sublabel={`Target: ${res.aspect} cover graphic for whitepaper: ${res.title}`}
-                      iconType="code"
-                      mode="light"
-                    />
+                    <div style={{ aspectRatio: "4/3", width: "100%", overflow: "hidden", background: "#F1F5F9" }}>
+                      <img
+                        src={res.img}
+                        alt={res.title}
+                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                      />
+                    </div>
                     
                     <div style={{ padding: 28 }}>
                       <span style={{ fontSize: 9.5, fontWeight: 700, background: "rgba(34, 197, 94, 0.1)", color: T.navyDim, padding: "3px 8px", borderRadius: 100, border: "1px solid rgba(34, 197, 94, 0.2)", letterSpacing: "0.08em", display: "inline-block", marginBottom: 12 }}>
@@ -227,37 +230,7 @@ export default function ResourcesPage() {
             ))}
           </div>
 
-          <Reveal delay={0.2}>
-            <div style={{ border: `1px solid ${T.mistDim}`, background: T.mist, padding: "40px 44px", borderRadius: 10, marginTop: 56, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 24 }}>
-              <div>
-                <h4 style={{ fontSize: 18, fontWeight: 700, color: T.ink, marginBottom: 6 }}>Download Company Profile (PDF)</h4>
-                <p style={{ fontSize: 13.5, color: T.textSecondaryLight, fontWeight: 300 }}>Get an instant overview of our practice capabilities, platform architectures, and GRC frameworks.</p>
-              </div>
-              <a href="#" style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 8,
-                padding: "11px 26px",
-                background: "#0F172A",
-                color: T.white,
-                fontFamily: T.sans,
-                fontSize: 13,
-                fontWeight: 600,
-                borderRadius: 100,
-                textDecoration: "none",
-                boxShadow: "0 4px 12px rgba(15,23,42,0.1)",
-                transition: "background 0.2s"
-              }}
-                onMouseEnter={(e) => e.currentTarget.style.background = "#16A34A"}
-                onMouseLeave={(e) => e.currentTarget.style.background = "#0F172A"}
-              >
-                <span>Download Profile</span>
-                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                </svg>
-              </a>
-            </div>
-          </Reveal>
+         
 
         </div>
       </section>

@@ -11,20 +11,12 @@ import Link from "next/link";
 
 const industriesList = [
   {
-    name: "Banking & Finance",
-    tagline: "High-frequency transaction ledgers and secure MPC wallets.",
-    desc: "We engineer zero-trust ledger databases, payment gateways, and institutional cryptocurrency trading terminals (Smart Crypto Exchange) with sub-millisecond matching engine capabilities.",
-    iconType: "database",
-    aspect: "16/9",
-    placeLabel: "Core Banking Ledger Flow"
-  },
-  {
     name: "Healthcare & Life Sciences",
     tagline: "Clinical portals and HIPAA-compliant data storage.",
     desc: "We construct secure medical records portals, scheduling systems, and pharmaceutical inventory trackers utilizing end-to-end data encryption and strict Role-Based Access Controls.",
     iconType: "lock",
     aspect: "16/9",
-    placeLabel: "HIPAA Records Sync Topology"
+    img: "/images/industries/healthcare.png"
   },
   {
     name: "Retail & Omnichannel Commerce",
@@ -32,7 +24,7 @@ const industriesList = [
     desc: "Deploying our Smart Orion platform to unify brick-and-mortar cashier cash drawers, automated supplier reordering rules, and digital webstore stocks under a single ledger.",
     iconType: "analytics",
     aspect: "16/9",
-    placeLabel: "Multi-Store Retail Grid"
+    img: "/images/industries/retail.png"
   },
   {
     name: "Logistics & Supply Chain",
@@ -40,7 +32,7 @@ const industriesList = [
     desc: "We build automated shipping calculators, barcode integration frameworks, and predictive dispatch engines that optimize transit routes and warehouse allocation efficiency.",
     iconType: "network",
     aspect: "16/9",
-    placeLabel: "Logistics Routing Matrix"
+    img: "/images/industries/logistics.png"
   },
   {
     name: "Manufacturing & IoT Telemetry",
@@ -48,7 +40,7 @@ const industriesList = [
     desc: "We integrate MQTT/WebSocket listeners with physical machinery scanners, mapping real-time manufacturing telemetry data directly to automated raw material purchasing.",
     iconType: "cloud",
     aspect: "16/9",
-    placeLabel: "IoT Assembly Data Flow"
+    img: "/images/industries/manufacturing.png"
   },
   {
     name: "Government & Public Administration",
@@ -56,21 +48,21 @@ const industriesList = [
     desc: "We coordinate with public agencies to develop citizens' registry portals, automated licensing, and secure cybersecurity audit vaults (SmartGRC) meeting government mandates.",
     iconType: "globe",
     aspect: "16/9",
-    placeLabel: "Cybersecurity Auditing Model"
+    img: "/images/industries/government.png"
   }
 ];
 
 const faqs = [
   {
     q: "How does Xencorp Solutions tailor custom software for highly regulated industries?",
-    a: "We incorporate regulatory controls directly into our system architectures. For example, in healthcare, we enforce strict audit trails and database encryption to ensure HIPAA compliance. In banking, we implement double-entry cryptographic ledger reconciliation."
+    a: "We incorporate regulatory controls directly into our system architectures. For example, in healthcare, we enforce strict audit trails and database encryption to ensure HIPAA compliance. In enterprise commerce, we implement double-entry cryptographic ledger reconciliation."
   },
   {
     q: "What compliance frameworks do your platforms support?",
     a: "Out of the box, our platforms (including SmartGRC) support SOC 2, ISO 27001, HIPAA, GDPR, PCI DSS, NIST, and DORA configurations. During discovery, we map these frameworks to your specific software checkpoints."
   },
   {
-    q: "Can your platforms integrate with legacy government or banking endpoints?",
+    q: "Can your platforms integrate with legacy government or enterprise endpoints?",
     a: "Yes. We specialize in building secure API adapters and event-driven data pipelines (using Apache Kafka/RabbitMQ) to interface modern frontends with legacy AS400, SAP, or custom mainframe databases."
   },
   {
@@ -106,6 +98,17 @@ export default function IndustriesPage() {
 
       {/* Hero Section */}
       <section style={{ position: "relative", minHeight: "65vh", display: "flex", alignItems: "center", overflow: "hidden", background: T.ink }}>
+        {/* Background Image overlay */}
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: "url('/images/secondary-hero-bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 0.20,
+          pointerEvents: "none",
+          zIndex: 1
+        }} />
         {/* Subtle radial green glow in upper right */}
         <div style={{
           position: "absolute",
@@ -163,7 +166,7 @@ export default function IndustriesPage() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 style={{ fontSize: 16.5, fontWeight: 300, color: T.textOnDarkSecondary, lineHeight: 1.7, marginBottom: 40, maxWidth: 680 }}
               >
-                We customize our systems and platforms for banking, healthcare, retail, logistics, manufacturing, and public administrations globally, ensuring compliance, security, and scalability from day one.
+                We customize our systems and platforms for healthcare, retail, logistics, manufacturing, and public administrations globally, ensuring compliance, security, and scalability from day one.
               </motion.p>
             </div>
 
@@ -174,12 +177,7 @@ export default function IndustriesPage() {
               style={{ display: "flex", justifyContent: "center" }}
               className="hero-graphic"
             >
-              <ImagePlaceholder
-                aspectRatio="4/3"
-                label="Global Industries Integration Overview"
-                sublabel="Target: 4:3 map rendering data pipelines routing from warehouses, bank vaults, and clinical databases to Xencorp cloud nodes"
-                iconType="globe"
-              />
+              
             </motion.div>
           </div>
         </div>
@@ -231,13 +229,13 @@ export default function IndustriesPage() {
                     </div>
 
                     <div style={{ order: isEven ? 2 : 1 }}>
-                      <ImagePlaceholder
-                        aspectRatio={ind.aspect}
-                        label={ind.placeLabel}
-                        sublabel={`Target: ${ind.aspect} schematic diagram showing custom database sync models and compliance controls for ${ind.name}`}
-                        iconType={ind.iconType as any}
-                        mode="light"
-                      />
+                      <div style={{ aspectRatio: "16/9", width: "100%", overflow: "hidden", borderRadius: 12, border: "1px solid rgba(0,0,0,0.06)", boxShadow: "0 10px 30px rgba(0,0,0,0.05)" }}>
+                        <img
+                          src={ind.img}
+                          alt={ind.name}
+                          style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                        />
+                      </div>
                     </div>
 
                   </div>

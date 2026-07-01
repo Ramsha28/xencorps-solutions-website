@@ -5,7 +5,6 @@ import Navigation from "../../components/layout/Navigation";
 import Footer from "../../components/layout/Footer";
 import HeroSection from "../../sections/services/HeroSection";
 import ServicesGrid from "../../sections/services/ServicesGrid";
-import WhyChooseServices from "../../sections/services/WhyChooseServices";
 import TechnologyCapabilities from "../../sections/services/TechnologyCapabilities";
 import DeliveryApproach from "../../sections/services/DeliveryApproach";
 import EngagementModels from "../../sections/services/EngagementModels";
@@ -28,8 +27,6 @@ export default function ServicesPage() {
       <HeroSection />
       
       <ServicesGrid />
-      
-      <WhyChooseServices />
       
       <TechnologyCapabilities />
       

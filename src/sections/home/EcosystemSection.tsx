@@ -13,15 +13,15 @@ const platforms = [
 ];
 
 export default function EcosystemSection() {
-  const [active, setActive] = useState<string | null>(null);
-  const ap = platforms.find(p => p.id === active);
+  const [active, setActive] = useState<string>("orion");
+  const ap = platforms.find(p => p.id === active) || platforms[1];
 
   return (
     <section style={{ background: T.ink, padding: "112px 0", overflow: "hidden" }}>
       <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 36px" }}>
         <Reveal style={{ textAlign: "center", marginBottom: 68 }}>
           <p style={{ fontFamily: T.sans, fontSize: 11, fontWeight: 600, color: T.navyLight, textTransform: "uppercase", letterSpacing: "0.16em", marginBottom: 14 }}>Ecosystem</p>
-          <h2 style={{ fontFamily: T.sans, fontSize: "clamp(28px, 3.6vw, 50px)", fontWeight: 700, color: T.white, letterSpacing: "-0.025em", lineHeight: 1.1, marginBottom: 16 }}>Enterprise Intelligence Ecosystem</h2>
+          <h2 style={{ fontFamily: T.sans, fontSize: "clamp(28px, 3.6vw, 50px)", fontWeight: 700, color: T.white, letterSpacing: "-0.025em", lineHeight: 1.1, marginBottom: 16 }}>Our Enterprise Software Platforms</h2>
           <p style={{ fontFamily: T.sans, fontSize: 16, color: "rgba(255, 255, 255, 0.72)", maxWidth: 560, margin: "0 auto", fontWeight: 300, lineHeight: 1.75 }}>
             Three proprietary platforms, six consulting practices, and a unified AI backbone that help enterprises modernize operations
           </p>
@@ -60,7 +60,7 @@ export default function EcosystemSection() {
                 return (
                   <motion.div
                     key={p.id}
-                    onClick={() => setActive(active === p.id ? null : p.id)}
+                    onClick={() => setActive(p.id)}
                     whileHover={{ scale: 1.04 }}
                     style={{
                       position: "absolute", ...pos[i],
@@ -81,35 +81,24 @@ export default function EcosystemSection() {
 
           <Reveal direction="right">
             <AnimatePresence mode="wait">
-              {ap ? (
-                <motion.div key={ap.id} initial={{ opacity: 0, x: 18 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -18 }} transition={{ duration: 0.32 }}>
-                  <span style={{ fontFamily: T.sans, fontSize: 10, fontWeight: 700, color: ap.color, textTransform: "uppercase", letterSpacing: "0.14em", background: `${ap.color}18`, padding: "4px 13px", borderRadius: 100, display: "inline-block", marginBottom: 18 }}>{ap.badge}</span>
-                  <h3 style={{ fontFamily: T.sans, fontSize: 30, fontWeight: 700, color: T.white, letterSpacing: "-0.025em", marginBottom: 8 }}>{ap.name}</h3>
-                  <p style={{ fontFamily: T.sans, fontSize: 13.5, color: ap.color, fontWeight: 500, marginBottom: 16 }}>{ap.tagline}</p>
-                  <p style={{ fontFamily: T.sans, fontSize: 14, color: "rgba(255, 255, 255, 0.72)", lineHeight: 1.76, marginBottom: 28, fontWeight: 300 }}>{ap.desc}</p>
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0, marginBottom: 28 }}>
-                    {ap.modules.map(m => (
-                      <div key={m} style={{ display: "flex", alignItems: "center", gap: 9, padding: "10px 0", borderBottom: "1px solid rgba(255, 255, 255, 0.08)" }}>
-                        <div style={{ width: 6, height: 6, borderRadius: "50%", background: ap.color, flexShrink: 0 }}/>
-                        <span style={{ fontFamily: T.sans, fontSize: 13, color: T.white, fontWeight: 500 }}>{m}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div style={{ display: "flex", gap: 12 }}>
-                    <Link href={`/products/${ap.slug}`} style={{ padding: "11px 24px", background: ap.color, color: T.white, fontFamily: T.sans, fontSize: 13, fontWeight: 600, borderRadius: 100, textDecoration: "none" }}>View Platform</Link>
-                    <Link href="/contact" style={{ padding: "11px 24px", border: "1.5px solid rgba(255, 255, 255, 0.22)", color: "rgba(255,255,255,0.8)", fontFamily: T.sans, fontSize: 13, fontWeight: 500, borderRadius: 100, textDecoration: "none" }}>Request Demo</Link>
-                  </div>
-                </motion.div>
-              ) : (
-                <motion.div key="empty" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-                  style={{ padding: "44px 40px", border: "1px dashed rgba(255, 255, 255, 0.15)", borderRadius: 12, textAlign: "center" }}
-                >
-                  <div style={{ width: 44, height: 44, borderRadius: "50%", background: T.navyGlow, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 14px" }}>
-                    <svg width="20" height="20" fill="none" stroke={T.navyLight} viewBox="0 0 24 24" strokeWidth={1.5}><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                  </div>
-                  <p style={{ fontFamily: T.sans, fontSize: 14, color: "rgba(255, 255, 255, 0.5)", lineHeight: 1.65, fontWeight: 300 }}>Select a platform node to explore its capabilities.</p>
-                </motion.div>
-              )}
+              <motion.div key={ap.id} initial={{ opacity: 0, x: 18 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -18 }} transition={{ duration: 0.32 }}>
+                <span style={{ fontFamily: T.sans, fontSize: 10, fontWeight: 700, color: ap.color, textTransform: "uppercase", letterSpacing: "0.14em", background: `${ap.color}18`, padding: "4px 13px", borderRadius: 100, display: "inline-block", marginBottom: 18 }}>{ap.badge}</span>
+                <h3 style={{ fontFamily: T.sans, fontSize: 30, fontWeight: 700, color: T.white, letterSpacing: "-0.025em", marginBottom: 8 }}>{ap.name}</h3>
+                <p style={{ fontFamily: T.sans, fontSize: 13.5, color: ap.color, fontWeight: 500, marginBottom: 16 }}>{ap.tagline}</p>
+                <p style={{ fontFamily: T.sans, fontSize: 14, color: "rgba(255, 255, 255, 0.72)", lineHeight: 1.76, marginBottom: 28, fontWeight: 300 }}>{ap.desc}</p>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0, marginBottom: 28 }}>
+                  {ap.modules.map(m => (
+                    <div key={m} style={{ display: "flex", alignItems: "center", gap: 9, padding: "10px 0", borderBottom: "1px solid rgba(255, 255, 255, 0.08)" }}>
+                      <div style={{ width: 6, height: 6, borderRadius: "50%", background: ap.color, flexShrink: 0 }}/>
+                      <span style={{ fontFamily: T.sans, fontSize: 13, color: T.white, fontWeight: 500 }}>{m}</span>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ display: "flex", gap: 12 }}>
+                  <Link href={`/products/${ap.slug}`} style={{ padding: "11px 24px", background: ap.color, color: T.white, fontFamily: T.sans, fontSize: 13, fontWeight: 600, borderRadius: 100, textDecoration: "none" }}>View Platform</Link>
+                  <Link href="/contact" style={{ padding: "11px 24px", border: "1.5px solid rgba(255, 255, 255, 0.22)", color: "rgba(255,255,255,0.8)", fontFamily: T.sans, fontSize: 13, fontWeight: 500, borderRadius: 100, textDecoration: "none" }}>Request Demo</Link>
+                </div>
+              </motion.div>
             </AnimatePresence>
           </Reveal>
         </div>

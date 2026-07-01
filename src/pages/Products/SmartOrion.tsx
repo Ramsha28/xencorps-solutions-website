@@ -285,10 +285,7 @@ export default function SmartOrion() {
         accentColor={accent}
       />
 
-      <BusinessBenefits
-        benefits={benefits}
-        accentColor={accent}
-      />
+
 
       <IntegrationEcosystem
         integrations={integrations}

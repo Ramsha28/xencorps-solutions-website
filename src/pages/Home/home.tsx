@@ -25,13 +25,13 @@ export default function XencorpHomepage() {
       `}</style>
       <Navigation />
       <Hero />
-      <MarqueeStrip />
-      <BusinessImpact />
-      <ServicesSection />
       <EcosystemSection />
+      <MarqueeStrip />
+      <ServicesSection />
+      <BusinessImpact />
       <WhyChooseUs />
-      <IndustriesSection />
       <DeliveryProcess />
+      <IndustriesSection />
       <HomeFAQ />
       <CTASection />
       <Footer />

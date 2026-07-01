@@ -7,14 +7,6 @@ import Reveal from "../../components/common/Reveal";
 
 const faqs = [
   {
-    q: "Who is Xencorp Solutions?",
-    a: "Xencorp Solutions is a premium enterprise technology consulting and custom software development firm. We bridge the gap between high-level management consulting and handcrafted systems engineering, serving clients globally with our strategic engineering center based in Lahore, Pakistan."
-  },
-  {
-    q: "What does the company do and what systems do you build?",
-    a: "We deliver full-lifecycle custom software development, AI automation pipelines, ERP integrations, and IT advisory services. Alongside our custom consulting, we deploy three proprietary platform accelerators: SmartGRC (governance & compliance), Smart Orion (multi-branch ERP & POS), and Smart Crypto Exchange (institutional FinTech)."
-  },
-  {
     q: "What core operational problems does Xencorp Solutions solve?",
     a: "We eliminate database sync delays, replace rigid legacy lock-ins, automate compliance auditing, and remove workflow friction. Our systems are engineered to reduce compliance workloads, slash inventory overhead, and optimize data throughput with zero down-time."
   },

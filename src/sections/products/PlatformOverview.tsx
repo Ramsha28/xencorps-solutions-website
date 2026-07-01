@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { T } from "../../styles/theme";
 import Reveal from "../../components/common/Reveal";
-import ImagePlaceholder from "../../components/common/ImagePlaceholder";
 
 interface PlatformOverviewProps {
   id: string;
@@ -25,86 +24,63 @@ export default function PlatformOverview({
   accentColor,
 }: PlatformOverviewProps) {
   return (
-    <section id="platform-overview" style={{ background: T.ink, padding: "100px 0", position: "relative" }}>
-      {/* Glow backdrop */}
-      <div style={{ position: "absolute", bottom: "10%", left: "5%", width: 350, height: 350, borderRadius: "50%", background: accentColor, opacity: 0.035, filter: "blur(80px)", pointerEvents: "none" }} />
-
+    <section id="platform-overview" style={{ background: T.mist, padding: "100px 0", position: "relative" }}>
       <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 36px", position: "relative", zIndex: 2 }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: 64, alignItems: "start" }} className="hero-grid-layout">
-          
-          <div>
-            <Reveal>
-              <span style={{ fontSize: 11, fontWeight: 700, color: accentColor, textTransform: "uppercase", letterSpacing: "0.18em", display: "inline-block", marginBottom: 12 }}>
-                Platform Architecture
-              </span>
-              <h2 style={{ fontFamily: T.display, fontSize: "clamp(28px, 3.5vw, 42px)", fontWeight: 800, color: T.white, letterSpacing: "-0.015em", lineHeight: 1.15, marginBottom: 28 }}>
-                The Enterprise Engine for {name}
-              </h2>
-            </Reveal>
+        
+        <style>{`
+          @media (max-width: 768px) {
+            .outcomes-grid {
+              grid-template-columns: 1fr !important;
+              gap: 16px !important;
+            }
+          }
+        `}</style>
 
-            <Reveal delay={0.1}>
-              <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-                <p style={{ fontFamily: T.sans, fontSize: 15.5, color: T.textSecondary, lineHeight: 1.7, fontWeight: 300 }}>
-                  {solution}
-                </p>
-                <div style={{ padding: "18px 24px", background: T.inkMid, borderLeft: `3px solid ${accentColor}`, borderRadius: "0 8px 8px 0" }}>
-                  <span style={{ fontFamily: T.sans, fontSize: 10, fontWeight: 700, color: accentColor, textTransform: "uppercase", letterSpacing: "0.08em", display: "block", marginBottom: 6 }}>
-                    Target Audience & Industry Profile
-                  </span>
-                  <p style={{ fontFamily: T.sans, fontSize: 13, color: T.textSecondary, fontWeight: 300, lineHeight: 1.5 }}>
-                    {audience}
-                  </p>
-                </div>
-                <div style={{ marginTop: 8 }}>
-                  <ImagePlaceholder
-                    aspectRatio="16/9"
-                    label={`${name} Platform Architecture Blueprint`}
-                    sublabel={`Target: 16:9 technical flowchart showing database replica configuration, API caching layers, and web application clients for ${name}`}
-                    iconType="network"
-                    style={{ borderColor: `${accentColor}44` }}
-                  />
-                </div>
-              </div>
-            </Reveal>
-          </div>
+        <div style={{ maxWidth: 880, margin: "0 auto" }}>
+          <Reveal>
+            <span style={{ fontSize: 11, fontWeight: 700, color: accentColor, textTransform: "uppercase", letterSpacing: "0.18em", display: "inline-block", marginBottom: 12 }}>
+              Platform Architecture
+            </span>
+            <h2 style={{ fontFamily: T.display, fontSize: "clamp(28px, 3.5vw, 42px)", fontWeight: 800, color: T.ink, letterSpacing: "-0.015em", lineHeight: 1.15, marginBottom: 24 }}>
+              The Enterprise Engine for {name}
+            </h2>
+          </Reveal>
 
-          <div style={{ background: T.inkMid, border: `1px solid rgba(255, 255, 255, 0.04)`, borderRadius: 12, padding: 36 }}>
-            <Reveal>
-              <h3 style={{ fontFamily: T.sans, fontSize: 16, fontWeight: 700, color: T.white, marginBottom: 24, textTransform: "uppercase", letterSpacing: "0.05em" }}>
-                Target Business Outcomes
-              </h3>
-              
-              <div style={{ display: "flex", flexDirection: "column", gap: 16, marginBottom: 32 }}>
+          <Reveal delay={0.1}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+              <p style={{ fontFamily: T.sans, fontSize: 16, color: "rgba(9, 43, 40, 0.72)", lineHeight: 1.76, fontWeight: 300 }}>
+                {solution}
+              </p>
+
+              {/* Target Business Outcomes List in a 3-column grid */}
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, marginTop: 12 }} className="outcomes-grid">
                 {outcomes.map((o, idx) => (
                   <div key={idx} style={{ display: "flex", gap: 12, alignItems: "start" }}>
-                    <div style={{ width: 6, height: 6, borderRadius: "50%", background: accentColor, marginTop: 7, flexShrink: 0 }} />
-                    <p style={{ fontFamily: T.sans, fontSize: 13.5, color: T.textSecondary, lineHeight: 1.5, fontWeight: 300 }}>
+                    <div style={{ 
+                      width: 18, 
+                      height: 18, 
+                      borderRadius: "50%", 
+                      background: "#22C55E", 
+                      display: "flex", 
+                      alignItems: "center", 
+                      justifyContent: "center",
+                      flexShrink: 0,
+                      marginTop: 2
+                    }}>
+                      <svg width="10" height="10" fill="none" stroke={T.white} viewBox="0 0 24 24" strokeWidth="3.5">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    </div>
+                    <p style={{ fontFamily: T.sans, fontSize: 14, color: T.ink, lineHeight: 1.5, fontWeight: 600 }}>
                       {o}
                     </p>
                   </div>
                 ))}
               </div>
-
-              <h3 style={{ fontFamily: T.sans, fontSize: 16, fontWeight: 700, color: T.white, marginBottom: 20, textTransform: "uppercase", letterSpacing: "0.05em", paddingTop: 16, borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-                Core Capabilities
-              </h3>
-              
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-                {capabilities.map((cap, idx) => (
-                  <div key={idx} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                    <svg width="14" height="14" fill="none" stroke={accentColor} viewBox="0 0 24 24" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span style={{ fontFamily: T.sans, fontSize: 13, color: T.white, fontWeight: 500 }}>
-                      {cap}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
-          </div>
-
+            </div>
+          </Reveal>
         </div>
+
       </div>
     </section>
   );

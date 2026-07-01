@@ -132,7 +132,7 @@ function Navigation() {
     >
       <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 36px", height: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", position: "relative", zIndex: 102 }}>
         {/* Logo */}
-        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}
+        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 6, textDecoration: "none" }}
               onMouseEnter={() => setHoveredLink(null)}
         >
           <img

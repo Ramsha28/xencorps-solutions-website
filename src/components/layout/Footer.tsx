@@ -40,7 +40,7 @@ export default function Footer() {
       <div style={{ maxWidth:1300, margin:"0 auto", padding:"0 36px" }}>
         <div style={{ display:"grid", gridTemplateColumns:"1.2fr 1fr 1fr 1fr", gap:44, marginBottom:60 }}>
           <div>
-            <Link href="/" style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16, textDecoration: "none" }}>
+            <Link href="/" style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 16, textDecoration: "none" }}>
               <img
                 src={xencorpsLogo.src}
                 alt="Xencorp Solutions logo"

@@ -79,6 +79,17 @@ export default function Contact() {
 
       {/* Hero Section */}
       <section style={{ position: "relative", minHeight: "55vh", display: "flex", alignItems: "center", overflow: "hidden", background: T.ink }}>
+        {/* Background Image overlay */}
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: "url('/images/secondary-hero-bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 0.20,
+          pointerEvents: "none",
+          zIndex: 1
+        }} />
         <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 36px", paddingTop: 128, paddingBottom: 64, width: "100%", position: "relative", zIndex: 2 }}>
           <div style={{ maxWidth: 760 }}>
             <motion.div
@@ -159,13 +170,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <ImagePlaceholder
-                      aspectRatio="16/9"
-                      label="Lahore HQ Office & Map Blueprint"
-                      sublabel="Target: 16:9 illustration mapping the physical location, secure networking gateways, and server rack coordinates of our strategic hub"
-                      iconType="globe"
-                      mode="light"
-                    />
+                    
                   </div>
                 </div>
               </Reveal>

@@ -29,6 +29,17 @@ export default function CaseStudiesOverviewPage() {
         overflow: "hidden", 
         background: T.ink 
       }}>
+        {/* Background Image overlay */}
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: "url('/images/secondary-hero-bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 0.20,
+          pointerEvents: "none",
+          zIndex: 1
+        }} />
         {/* Subtle radial green glow in upper right */}
         <div style={{
           position: "absolute",
@@ -92,28 +103,7 @@ export default function CaseStudiesOverviewPage() {
             </div>
 
             {/* Graphic Column */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              style={{ display: "flex", justifyContent: "center" }}
-              className="hero-graphic"
-            >
-              <div style={{
-                width: "100%",
-                maxWidth: 320,
-                height: 320,
-                borderRadius: 24,
-                background: T.inkMid,
-                border: `1px solid ${T.line}`,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                boxShadow: "0 24px 50px rgba(0,0,0,0.3)"
-              }}>
-                <span style={{ fontSize: 96 }}>📊</span>
-              </div>
-            </motion.div>
+           
           </div>
         </div>
 
@@ -191,13 +181,13 @@ export default function CaseStudiesOverviewPage() {
             </div>
             
             <Reveal delay={0.2}>
-              <ImagePlaceholder
-                aspectRatio="4/3"
-                label="Case Studies & Systems Auditing Portfolio"
-                sublabel="Target: 4:3 graphic rendering abstract server clusters, encrypted ledger transactions, and verified enterprise business outcome metrics"
-                iconType="analytics"
-                mode="light"
-              />
+              <div style={{ aspectRatio: "4/3", width: "100%", overflow: "hidden", borderRadius: 16, border: "1px solid rgba(0,0,0,0.06)", boxShadow: "0 12px 36px rgba(0,0,0,0.07)" }}>
+                <img
+                  src="/images/case-studies/portfolio-cover.png"
+                  alt="Case Studies & Systems Auditing Portfolio"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                />
+              </div>
             </Reveal>
           </div>
         </div>

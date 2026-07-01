@@ -6,7 +6,6 @@ import { T, fontLink } from "../../styles/theme";
 import Navigation from "../../components/layout/Navigation";
 import Footer from "../../components/layout/Footer";
 import Reveal from "../../components/common/Reveal";
-import ImagePlaceholder from "../../components/common/ImagePlaceholder";
 
 const timelineEvents = [
   { year: "2019", title: "Founding & Local Operations", desc: "Established in Lahore, Pakistan as a specialized technology studio focusing on custom software engineering and enterprise infrastructure development." },
@@ -14,15 +13,6 @@ const timelineEvents = [
   { year: "2023", title: "Platform Strategy", desc: "Began development of our proprietary enterprise platforms — SmartGRC, Smart Orion, and Smart Crypto Exchange — merging consulting with SaaS products." },
   { year: "2025", title: "Scale & Practice Leadership", desc: "Grew to serve over 9 practice areas across 10 industries, delivering multi-region deployments, regulatory compliance solutions, and AI-enabled operations." },
   { year: "2026", title: "Present & Future", desc: "Operating as a trusted global technology partner known for engineering excellence, corporate credibility, and long-term executive relationships." }
-];
-
-const pillars = [
-  { title: "Clean Architecture", desc: "Layered architectures, strict domain separation, and modular designs that ensure long-term codebase health." },
-  { title: "Scalable Systems", desc: "Microservices and event-driven architectures utilizing technologies like Kafka, Docker, and Kubernetes for high throughput." },
-  { title: "Enterprise Security", desc: "Built-in encryption, Role-Based Access Control (RBAC), secure authentication pipelines, and strict audit trails." },
-  { title: "Modern UI/UX", desc: "Premium, responsive interfaces designed for business utility, operational efficiency, and rich data visualization." },
-  { title: "Cloud-Ready Infra", desc: "Automated CI/CD pipelines, containerized deployments, and hybrid-cloud topologies engineered for zero downtime." },
-  { title: "Long-Term Maintainability", desc: "Rigorous quality engineering, automated testing coverage, and clean documentation for seamless operations." }
 ];
 
 const strengths = [
@@ -81,6 +71,17 @@ export default function About() {
 
       {/* Hero Section */}
       <section style={{ position: "relative", minHeight: "65vh", display: "flex", alignItems: "center", overflow: "hidden", background: T.ink }}>
+        {/* Background Image overlay */}
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: "url('/images/secondary-hero-bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 0.20,
+          pointerEvents: "none",
+          zIndex: 1
+        }} />
         <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 36px", paddingTop: 128, paddingBottom: 64, width: "100%", position: "relative", zIndex: 2 }}>
           <div style={{ maxWidth: 760 }}>
             <motion.div
@@ -147,18 +148,9 @@ export default function About() {
                 <p style={{ fontSize: 15, color: "#2E4A4A", lineHeight: 1.76, marginBottom: 20, fontWeight: 300 }}>
                   We work through direct business references, strategic consulting engagements, and long-term technology partnerships. Unlike simple agencies, we invest heavily in proprietary products like SmartGRC, Smart Orion, and Smart Crypto Exchange, translating our deep field expertise into reusable enterprise accelerators.
                 </p>
-                <p style={{ fontSize: 15, color: "#2E4A4A", lineHeight: 1.76, fontWeight: 300, marginBottom: 30 }}>
+                <p style={{ fontSize: 15, color: "#2E4A4A", lineHeight: 1.76, fontWeight: 300 }}>
                   Today, we collaborate with corporate entities, educational centers, retail distributors, and financial tech firms worldwide to turn complex constraints into secure, scalable, and audit-ready digital platforms.
                 </p>
-                <div>
-                  <ImagePlaceholder
-                    aspectRatio="16/9"
-                    label="Lahore HQ & Strategic Engineering Center Layout"
-                    sublabel="Target: 16:9 blueprint mapping our secure facilities, physical access control checkpoints, and developer pod topologies"
-                    iconType="globe"
-                    mode="light"
-                  />
-                </div>
               </div>
             </Reveal>
 
@@ -187,76 +179,52 @@ export default function About() {
         </div>
       </section>
 
-      {/* Engineering Culture / Pillars */}
+      {/* Strategic Strengths (Dark Theme replacing Engineering Culture) */}
       <section style={{ background: T.ink, padding: "112px 0", color: T.white }}>
         <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 36px" }}>
           <Reveal style={{ textAlign: "center", marginBottom: 64 }}>
-            <p style={{ fontSize: 11, fontWeight: 600, color: T.tealLight, textTransform: "uppercase", letterSpacing: "0.16em", marginBottom: 14 }}>Engineering Culture</p>
-            <h2 style={{ fontSize: "clamp(28px, 3.4vw, 44px)", fontWeight: 700, color: T.tealLight, letterSpacing: "-0.025em", lineHeight: 1.12, marginBottom: 16 }}>Built to Endure</h2>
+            <p style={{ fontSize: 11, fontWeight: 600, color: T.tealLight, textTransform: "uppercase", letterSpacing: "0.16em", marginBottom: 14 }}>Our Advantages</p>
+            <h2 style={{ fontSize: "clamp(28px, 3.4vw, 44px)", fontWeight: 700, color: T.white, letterSpacing: "-0.025em", lineHeight: 1.12, marginBottom: 16 }}>Strategic Strengths</h2>
             <p style={{ fontSize: 15.5, color: T.textOnDarkSecondary, maxWidth: 600, margin: "0 auto", fontWeight: 300, lineHeight: 1.72 }}>
-              We do not cut corners. Our systems are engineered using strict architectural rules, automated testing pipelines, and defense-in-depth security principles.
+              Our institutional capabilities, modern stack proficiency, and delivery frameworks enable us to execute complex digital modernizations reliably.
             </p>
           </Reveal>
 
-          <style>{`
-            @media (max-width: 991px) {
-              .pillars-split-grid {
-                grid-template-columns: 1fr !important;
-                gap: 40px !important;
-              }
-              .pillars-grid-left {
-                grid-template-columns: 1fr !important;
-              }
-            }
-          `}</style>
-          <div style={{ display: "grid", gridTemplateColumns: "1.3fr 0.7fr", gap: 40, alignItems: "center" }} className="pillars-split-grid">
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", border: "1px solid rgba(34,197,94,0.18)", background: T.inkMid, borderRadius: 12, overflow: "hidden" }} className="pillars-grid-left">
-              {pillars.map((pil, i) => (
-                <Reveal key={pil.title} delay={i * 0.06}>
-                  <div style={{ padding: "36px 30px", borderRight: "1px solid rgba(34,197,94,0.1)", borderBottom: "1px solid rgba(34,197,94,0.1)", background: T.inkMid, height: "100%", transition: "background 0.3s" }}
-                       onMouseEnter={(e) => { e.currentTarget.style.background = T.inkSoft; }}
-                       onMouseLeave={(e) => { e.currentTarget.style.background = T.inkMid; }}
-                  >
-                    <div style={{ width: 18, height: 1.5, background: T.teal, marginBottom: 20 }} />
-                    <h3 style={{ fontSize: 16.5, fontWeight: 600, color: T.white, marginBottom: 12 }}>{pil.title}</h3>
-                    <p style={{ fontSize: 13.5, color: T.textOnDarkSecondary, lineHeight: 1.72, fontWeight: 300 }}>{pil.desc}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-            <Reveal delay={0.2}>
-              <ImagePlaceholder
-                aspectRatio="1/1"
-                label="Core Engineering Pillars Diagram"
-                sublabel="Target: 1:1 technical blueprint detailing custom code compilation stages, core framework domains, and network encapsulation security layers"
-                iconType="code"
-              />
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section style={{ background: T.mist, padding: "112px 0", color: T.ink }}>
-        <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 36px" }}>
-          <Reveal style={{ marginBottom: 60 }}>
-            <div>
-              <p style={{ fontSize: 11, fontWeight: 600, color: T.navy, textTransform: "uppercase", letterSpacing: "0.16em", marginBottom: 14 }}>Our Advantages</p>
-              <h2 style={{ fontSize: "clamp(28px, 3.4vw, 44px)", fontWeight: 700, color: T.ink, letterSpacing: "-0.025em", lineHeight: 1.15 }}>Strategic Strengths</h2>
-            </div>
-          </Reveal>
-
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 1, background: T.mistDim }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }} className="strengths-grid">
             {strengths.map((str, i) => (
               <Reveal key={str.h} delay={i * 0.05}>
-                <div style={{ padding: "38px 30px", background: T.white, height: "100%", transition: "transform 0.25s" }}>
-                  <h3 style={{ fontSize: 16, fontWeight: 600, color: T.ink, marginBottom: 10, letterSpacing: "-0.01em" }}>{str.h}</h3>
-                  <p style={{ fontSize: 13, color: T.textSecondaryLight, lineHeight: 1.66, fontWeight: 300 }}>{str.d}</p>
+                <div style={{
+                  padding: "38px 30px",
+                  background: "rgba(255, 255, 255, 0.02)",
+                  border: "1px solid rgba(255, 255, 255, 0.06)",
+                  borderRadius: 12,
+                  height: "100%",
+                  transition: "all 0.3s ease"
+                }}
+                 className="strength-card"
+                >
+                  <div style={{ width: 18, height: 1.5, background: T.teal, marginBottom: 20 }} />
+                  <h3 style={{ fontSize: 17, fontWeight: 600, color: T.white, marginBottom: 12, letterSpacing: "-0.01em" }}>{str.h}</h3>
+                  <p style={{ fontSize: 13.5, color: T.textOnDarkSecondary, lineHeight: 1.68, fontWeight: 300 }}>{str.d}</p>
                 </div>
               </Reveal>
             ))}
           </div>
         </div>
+
+        <style>{`
+          @media (max-width: 991px) {
+            .strengths-grid {
+              grid-template-columns: 1fr !important;
+              gap: 20px !important;
+            }
+          }
+          .strength-card:hover {
+            background: rgba(255, 255, 255, 0.04) !important;
+            border-color: ${T.teal} !important;
+            transform: translateY(-4px);
+          }
+        `}</style>
       </section>
 
       {/* Interactive Timeline */}
@@ -303,15 +271,6 @@ export default function About() {
                     {timelineEvents[activeTimeline].desc}
                   </p>
                 </div>
-              </Reveal>
-              <Reveal delay={0.1}>
-                <ImagePlaceholder
-                  aspectRatio="16/9"
-                  label="Corporate Milestones & Evolution Graphic"
-                  sublabel="Target: 16:9 flowchart charting Xencorp key milestone accomplishments, resource counts, and international business footprints"
-                  iconType="analytics"
-                  mode="light"
-                />
               </Reveal>
             </div>
           </div>

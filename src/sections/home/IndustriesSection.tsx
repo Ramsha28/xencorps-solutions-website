@@ -54,34 +54,9 @@ export default function IndustriesSection() {
       <style>{`
         .industries-section {
           position: relative;
-          background: ${T.ink};
+          background: ${T.white};
           padding: 104px 0;
           overflow: hidden;
-        }
-        .industries-section::before {
-          content: "";
-          position: absolute;
-          top: -120px;
-          right: -80px;
-          width: 480px;
-          height: 480px;
-          background: ${T.glow};
-          filter: blur(120px);
-          border-radius: 50%;
-          pointer-events: none;
-          opacity: 0.55;
-        }
-        .industries-section::after {
-          content: "";
-          position: absolute;
-          bottom: -100px;
-          left: -60px;
-          width: 360px;
-          height: 360px;
-          background: rgba(34, 197, 94, 0.06);
-          filter: blur(100px);
-          border-radius: 50%;
-          pointer-events: none;
         }
         .industries-wrap {
           position: relative;
@@ -93,7 +68,7 @@ export default function IndustriesSection() {
         .industries-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 16px;
+          gap: 20px;
         }
         @media (max-width: 991px) {
           .industries-grid {
@@ -107,66 +82,47 @@ export default function IndustriesSection() {
         }
         .industry-card {
           position: relative;
-          border-radius: 14px;
-          border: 1px solid rgba(255, 255, 255, 0.07);
-          background: linear-gradient(145deg, rgba(26, 34, 43, 0.92) 0%, rgba(17, 22, 29, 0.88) 100%);
-          padding: 28px 24px;
+          border-radius: 12px;
+          border: 1px solid rgba(0, 0, 0, 0.05);
+          background: #FFFFFF;
+          padding: 16px 20px;
           cursor: default;
           overflow: hidden;
-          min-height: 148px;
           display: flex;
-          flex-direction: column;
-          gap: 14px;
-        }
-        .industry-card::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background: radial-gradient(circle at 20% 0%, rgba(34, 197, 94, 0.12), transparent 55%);
-          opacity: 0;
-          transition: opacity 0.35s ease;
-          pointer-events: none;
-        }
-        .industry-card.is-hovered::before {
-          opacity: 1;
+          flex-direction: row;
+          align-items: center;
+          gap: 16px;
         }
         .industry-icon-wrap {
-          width: 46px;
-          height: 46px;
-          border-radius: 11px;
+          width: 40px;
+          height: 40px;
+          border-radius: 8px;
           display: flex;
           align-items: center;
           justify-content: center;
-          border: 1px solid rgba(34, 197, 94, 0.18);
-          background: rgba(34, 197, 94, 0.08);
-          color: ${T.tealLight};
+          border: 1px solid rgba(22, 163, 74, 0.15);
+          background: rgba(22, 163, 74, 0.04);
+          color: ${T.teal};
           flex-shrink: 0;
         }
         .industry-card.is-hovered .industry-icon-wrap {
-          border-color: rgba(110, 231, 160, 0.45);
-          box-shadow: 0 0 24px rgba(34, 197, 94, 0.2);
+          border-color: rgba(22, 163, 74, 0.35);
+          box-shadow: 0 0 16px rgba(22, 163, 74, 0.12);
         }
         .industry-name {
           font-family: ${T.sans};
           font-size: 15px;
           font-weight: 600;
-          color: ${T.textOnDark};
+          color: ${T.textPrimaryLight};
           letter-spacing: -0.01em;
           line-height: 1.25;
         }
         .industry-tag {
           font-family: ${T.sans};
           font-size: 12px;
-          font-weight: 300;
-          color: ${T.textOnDarkSecondary};
+          font-weight: 400;
+          color: ${T.textSecondaryLight};
           line-height: 1.45;
-        }
-        .industries-footnote {
-          margin-top: 28px;
-          border-radius: 14px;
-          border: 1px solid rgba(34, 197, 94, 0.12);
-          background: linear-gradient(90deg, rgba(34, 197, 94, 0.06) 0%, rgba(34, 197, 94, 0.02) 100%);
-          padding: 26px 30px;
         }
       `}</style>
 
@@ -191,14 +147,14 @@ export default function IndustriesSection() {
                 fontFamily: T.sans,
                 fontSize: "clamp(26px, 3.2vw, 44px)",
                 fontWeight: 700,
-                color: T.white,
+                color: T.textPrimaryLight,
                 letterSpacing: "-0.025em",
                 lineHeight: 1.1,
               }}
             >
               Serving the World&apos;s
               <br />
-              <span style={{ color: T.tealLight }}>Most Demanding Sectors</span>
+              <span style={{ color: "#16A34A" }}>Most Demanding Sectors</span>
             </h2>
           </div>
         </Reveal>
@@ -221,11 +177,11 @@ export default function IndustriesSection() {
                   onHoverStart={() => setHovered(i)}
                   onHoverEnd={() => setHovered(null)}
                   animate={{
-                    y: isHovered ? -6 : 0,
-                    borderColor: isHovered ? "rgba(110, 231, 160, 0.35)" : "rgba(255, 255, 255, 0.07)",
+                    y: isHovered ? -4 : 0,
+                    borderColor: isHovered ? "rgba(22, 163, 74, 0.25)" : "rgba(0, 0, 0, 0.05)",
                     boxShadow: isHovered
-                      ? "0 18px 40px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(34, 197, 94, 0.08)"
-                      : "0 4px 20px rgba(0, 0, 0, 0.12)",
+                      ? "0 8px 24px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(34, 197, 94, 0.06)"
+                      : "0 2px 8px rgba(0, 0, 0, 0.01)",
                   }}
                   transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
                 >
@@ -241,7 +197,7 @@ export default function IndustriesSection() {
                       animate={{ y: isHovered ? -2 : 0 }}
                       transition={{ duration: 0.25 }}
                     >
-                      <Icon size={22} strokeWidth={1.75} aria-hidden />
+                      <Icon size={20} strokeWidth={1.75} aria-hidden />
                     </motion.div>
                   </motion.div>
 
@@ -270,8 +226,6 @@ export default function IndustriesSection() {
             );
           })}
         </motion.div>
-
-        
       </div>
     </section>
   );
