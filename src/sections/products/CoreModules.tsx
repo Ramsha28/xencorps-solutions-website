@@ -67,7 +67,16 @@ export default function CoreModules({ modules, accentColor }: CoreModulesProps) 
               >
                 <div>
                   {/* Icon */}
-                  <div style={{ width: 44, height: 44, borderRadius: 10, background: "rgba(255, 255, 255, 0.03)", display: "flex", alignItems: "center", display: "inline-flex", alignItems: "center", justifyContent: "center", marginBottom: 24, color: accentColor }}>
+                  <div style={{ 
+                    width: 44, 
+                    height: 44, 
+                    borderRadius: 10, 
+                    background: "rgba(255, 255, 255, 0.03)", 
+                    alignItems: "center", 
+                    display: "inline-flex", 
+                    
+                    justifyContent: "center", 
+                    marginBottom: 24, color: accentColor }}>
                     {mod.icon}
                   </div>
                   
