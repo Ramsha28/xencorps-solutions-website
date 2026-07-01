@@ -20,8 +20,8 @@ export default function BusinessImpact() {
           <div style={{ marginBottom: 60 }}>
             <p style={{ fontFamily: T.sans, fontSize: 11, fontWeight: 600, color: T.navyLight, textTransform: "uppercase", letterSpacing: "0.16em", marginBottom: 14 }}>Business Impact</p>
             <h2 style={{ fontFamily: T.sans, fontSize: "clamp(28px, 3.6vw, 48px)", fontWeight: 700, color: T.white, letterSpacing: "-0.025em", lineHeight: 1.12 }}>
-              Results That Move<br/>
-              <span style={{ color: T.navyLight }}>Enterprise Needles</span>
+             Business Outcomes That <br/>
+              <span style={{ color: T.navyLight }}>Matter</span>
             </h2>
           </div>
         </Reveal>

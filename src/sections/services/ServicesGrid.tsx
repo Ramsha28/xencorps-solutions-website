@@ -128,100 +128,116 @@ export default function ServicesGrid() {
           </div>
         </Reveal>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(380px, 1fr))", gap: 32 }}>
+        <style>{`
+          .services-grid-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+          }
+          @media (max-width: 1200px) {
+            .services-grid-list {
+              grid-template-columns: repeat(2, 1fr) !important;
+            }
+          }
+          @media (max-width: 768px) {
+            .services-grid-list {
+              grid-template-columns: 1fr !important;
+            }
+          }
+        `}</style>
+
+        <div className="services-grid-list">
           {servicesList.map((service, idx) => (
             <Reveal key={service.id} delay={idx * 0.05}>
-              <motion.div
-                onHoverStart={() => setHov(service.id)}
-                onHoverEnd={() => setHov(null)}
-                style={{
-                  background: T.mist,
-                  border: `1.5px solid ${T.mistDim}`,
-                  borderRadius: 10,
-                  padding: "44px 36px",
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                  position: "relative",
-                  overflow: "hidden",
-                  boxShadow: "0 4px 20px rgba(0,128,128,0.01)"
-                }}
-              >
-                {/* Top border bar on hover */}
+              <Link href={`/services/${service.id}`} style={{ textDecoration: "none", color: "inherit", display: "block", height: "100%" }}>
                 <motion.div
-                  animate={{ scaleX: hov === service.id ? 1 : 0 }}
+                  onHoverStart={() => setHov(service.id)}
+                  onHoverEnd={() => setHov(null)}
                   style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    height: 3,
-                    background: T.teal,
-                    transformOrigin: "left",
-                    transition: "transform 0.3s ease"
+                    background: T.mist,
+                    border: `1.5px solid ${T.mistDim}`,
+                    borderRadius: 10,
+                    padding: "44px 36px",
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    position: "relative",
+                    overflow: "hidden",
+                    boxShadow: "0 4px 20px rgba(0,128,128,0.01)",
+                    cursor: "pointer"
                   }}
-                />
+                >
+                  {/* Top border bar on hover */}
+                  <motion.div
+                    animate={{ scaleX: hov === service.id ? 1 : 0 }}
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      height: 3,
+                      background: T.teal,
+                      transformOrigin: "left",
+                      transition: "transform 0.3s ease"
+                    }}
+                  />
 
-                <div>
-                  <div style={{
-                    color: hov === service.id ? T.teal : T.tealDim,
-                    marginBottom: 20,
-                    transition: "color 0.25s"
-                  }}>
-                    {service.icon}
-                  </div>
-                  
-                  <h3 style={{
-                    fontSize: 19,
-                    fontWeight: 700,
-                    color: T.ink,
-                    marginBottom: 14,
-                    letterSpacing: "-0.015em",
-                    lineHeight: 1.3
-                  }}>
-                    {service.title}
-                  </h3>
+                  <div style={{ position: "relative", zIndex: 2 }}>
+                    <div style={{
+                      color: hov === service.id ? T.teal : T.tealDim,
+                      marginBottom: 20,
+                      transition: "color 0.25s"
+                    }}>
+                      {service.icon}
+                    </div>
+                    
+                    <h3 style={{
+                      fontSize: 19,
+                      fontWeight: 700,
+                      color: T.ink,
+                      marginBottom: 14,
+                      letterSpacing: "-0.015em",
+                      lineHeight: 1.3
+                    }}>
+                      {service.title}
+                    </h3>
 
-                  <p style={{
-                    fontSize: 14.5,
-                    color: "#2C4C4A",
-                    lineHeight: 1.68,
-                    fontWeight: 300,
-                    marginBottom: 20
-                  }}>
-                    {service.desc}
-                  </p>
-                </div>
-
-                <div style={{ borderTop: `1px solid rgba(0,194,160,0.1)`, paddingTop: 20, marginTop: 10 }}>
-                  <div style={{ marginBottom: 20 }}>
-                    <span style={{ fontSize: 10, fontWeight: 700, color: T.tealDim, textTransform: "uppercase", letterSpacing: "0.08em", display: "block", marginBottom: 4 }}>
-                      Business Outcome
-                    </span>
-                    <p style={{ fontSize: 13, color: "#476C69", lineHeight: 1.5, fontWeight: 300 }}>
-                      {service.outcome}
+                    <p style={{
+                      fontSize: 14.5,
+                      color: "#2C4C4A",
+                      lineHeight: 1.68,
+                      fontWeight: 300
+                    }}>
+                      {service.desc}
                     </p>
                   </div>
 
-                  <Link href={`/services/${service.id}`} style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: 6,
-                    fontSize: 13,
-                    fontWeight: 600,
-                    color: T.teal,
-                    textDecoration: "none",
-                    transition: "gap 0.2s"
-                  }}
-                    onMouseEnter={(e) => e.currentTarget.style.color = T.navyDim}
-                    onMouseLeave={(e) => e.currentTarget.style.color = T.teal}
-                  >
-                    Read Practice Details 
-                    <span style={{ transition: "transform 0.2s" }} className="arrow">→</span>
-                  </Link>
-                </div>
-              </motion.div>
+                  {/* Subtle Background Watermark Image Shadow */}
+                  <div style={{
+                    position: "absolute",
+                    bottom: -30,
+                    right: -35,
+                    width: 200,
+                    height: 125,
+                    opacity: hov === service.id ? 0.08 : 0.04,
+                    transform: hov === service.id ? "rotate(-2deg) scale(1.08)" : "rotate(-6deg) scale(1)",
+                    pointerEvents: "none",
+                    transition: "transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease",
+                    zIndex: 1,
+                    borderRadius: 12,
+                    overflow: "hidden",
+                    border: "1px solid rgba(0,0,0,0.08)",
+                    boxShadow: "0 8px 30px rgba(0,0,0,0.12)"
+                  }}>
+                    <img
+                      src={`/images/services/hero-${service.id}.png`}
+                      alt=""
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    />
+                  </div>
+                </motion.div>
+              </Link>
             </Reveal>
           ))}
         </div>
