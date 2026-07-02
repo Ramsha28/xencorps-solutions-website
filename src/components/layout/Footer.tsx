@@ -80,8 +80,15 @@ export default function Footer() {
         <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", paddingTop:22, borderTop:"1px solid rgba(255,255,255,0.06)" }}>
           <p style={{ fontFamily:T.sans, fontSize:12, color:"rgba(255,255,255,0.45)", fontWeight:300 }}>© 2026 Xencorpsolutions. All Rights Reserved.</p>
           <div style={{ display:"flex", gap:22 }}>
-            {["Privacy Policy","Terms of Use","Security"].map(l => (
-              <a key={l} href="#" style={{ fontFamily:T.sans, fontSize:12, color:"rgba(255,255,255,0.45)", textDecoration:"none", fontWeight:300 }}>{l}</a>
+            {[
+              { name: "Privacy Policy", href: "/privacy-policy" },
+              { name: "Terms of Use", href: "/terms-of-use" },
+              { name: "Security", href: "/security" }
+            ].map(l => (
+              <Link key={l.name} href={l.href} style={{ fontFamily:T.sans, fontSize:12, color:"rgba(255,255,255,0.45)", textDecoration:"none", fontWeight:300, transition:"color 0.2s" }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = T.white; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.45)"; }}
+              >{l.name}</Link>
             ))}
           </div>
         </div>
