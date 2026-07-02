@@ -6,12 +6,33 @@ import { T, fontLink } from "../../styles/theme";
 import Navigation from "../../components/layout/Navigation";
 import Footer from "../../components/layout/Footer";
 import Reveal from "../../components/common/Reveal";
+import ImagePlaceholder from "../../components/common/ImagePlaceholder";
 
 const faq = [
-  { q: "How soon can we initiate our discovery phase?", a: "Typically, we can kick off discovery workshops within 3 to 5 business days of signing an NDA. This initial phase involves senior analysts and solutions architects mapping out workflows and target infrastructure." },
-  { q: "What is your approach to NDAs and intellectual property?", a: "We maintain standard enterprise NDA protocols. Upon execution of our engagement agreements, all custom source code, databases, design artifacts, and deployment files remain 100% proprietary to the client." },
-  { q: "Do you offer post-deployment support and operations maintenance?", a: "Yes. Every enterprise project includes a standard 90-day warranty window. Following this, clients can choose from our structured SLA support plans, which cover security auditing, software patching, database backup systems, and cloud scaling." },
-  { q: "Can you integrate with existing legacy ERPs and compliance platforms?", a: "Absolutely. Our engineering teams specialize in building robust API wrappers, event pipelines (via Kafka/RabbitMQ), and custom modules to interface with systems like SAP, Oracle, and Odoo." }
+  { 
+    q: "How soon can we initiate our discovery phase?", 
+    a: "Typically, we can kick off discovery workshops within 3 to 5 business days of signing an NDA. This initial phase involves senior analysts and solutions architects mapping out workflows and target infrastructure." 
+  },
+  { 
+    q: "What is your approach to NDAs and intellectual property?", 
+    a: "We maintain standard enterprise NDA protocols. Upon execution of our engagement agreements, all custom source code, databases, design artifacts, and deployment files remain 100% proprietary to the client." 
+  },
+  { 
+    q: "Do you offer post-deployment support and operations maintenance?", 
+    a: "Yes. Every enterprise project includes a standard 90-day warranty window. Following this, clients can choose from our structured SLA support plans, which cover security auditing, software patching, database backup systems, and cloud scaling." 
+  },
+  { 
+    q: "Can you integrate with existing legacy ERPs and compliance platforms?", 
+    a: "Absolutely. Our engineering teams specialize in building robust API wrappers, event pipelines (via Kafka/RabbitMQ), and custom modules to interface with systems like SAP, Oracle, and Odoo." 
+  },
+  {
+    q: "What size budgets do you typically work with for custom systems?",
+    a: "Our standard corporate development contracts typically range from $25,000 to $100,000+, depending on project scale, database integration complexity, and timeline requirements. For ongoing strategic advisory and maintenance, we offer retainer agreements starting at $3,500/month."
+  },
+  {
+    q: "What information is required to receive a formal proposal?",
+    a: "We request high-level project goals, target user counts, database integration endpoints, compliance frameworks, and existing visual wireframes if available. Following our initial Discovery call, we will provide a comprehensive, itemized proposal within 3-5 business days."
+  }
 ];
 
 export default function Contact() {
@@ -58,6 +79,17 @@ export default function Contact() {
 
       {/* Hero Section */}
       <section style={{ position: "relative", minHeight: "55vh", display: "flex", alignItems: "center", overflow: "hidden", background: T.ink }}>
+        {/* Background Image overlay */}
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: "url('/images/secondary-hero-bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 0.20,
+          pointerEvents: "none",
+          zIndex: 1
+        }} />
         <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 36px", paddingTop: 128, paddingBottom: 64, width: "100%", position: "relative", zIndex: 2 }}>
           <div style={{ maxWidth: 760 }}>
             <motion.div
@@ -111,19 +143,19 @@ export default function Contact() {
       {/* Main Grid: Form and Contact Info */}
       <section style={{ background: T.white, padding: "112px 0", color: T.ink }}>
         <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 36px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "0.95fr 1.05fr", gap: 76, alignItems: "start" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "0.95fr 1.05fr", gap: 76, alignItems: "start" }} className="hero-grid-layout">
             
             {/* Left Column: Office info & Inquiry guidelines */}
-            <div style={{ display: "flex", flexDirection: "column", gap: 48 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 40 }}>
               <Reveal>
                 <div>
                   <p style={{ fontSize: 11, fontWeight: 600, color: T.navy, textTransform: "uppercase", letterSpacing: "0.16em", marginBottom: 14 }}>Inquiries</p>
                   <h2 style={{ fontSize: 32, fontWeight: 700, color: T.ink, letterSpacing: "-0.025em", marginBottom: 18, lineHeight: 1.15 }}>Office Headquarters</h2>
-                  <p style={{ fontSize: 14.5, color: "#2E4A4A", lineHeight: 1.72, fontWeight: 300, marginBottom: 28 }}>
+                  <p style={{ fontSize: 14.5, color: "#2E4A4A", lineHeight: 1.72, fontWeight: 300, marginBottom: 24 }}>
                     Xencorpsolutions is headquartered in Lahore, Pakistan. We coordinate global engagements and direct-client delivery pipelines from our central technology hub.
                   </p>
                   
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 28 }}>
                     <div style={{ border: `1px solid ${T.mistDim}`, background: T.mist, padding: 24, borderRadius: 8 }}>
                       <span style={{ fontSize: 10, fontWeight: 700, color: T.textMuted, textTransform: "uppercase", letterSpacing: "0.12em", display: "block", marginBottom: 8 }}>Primary Hub</span>
                       <h4 style={{ fontSize: 15, fontWeight: 600, color: T.ink, marginBottom: 6 }}>Lahore, Pakistan</h4>
@@ -136,28 +168,34 @@ export default function Contact() {
                       <p style={{ fontSize: 13, color: T.textSecondaryLight, fontWeight: 300 }}>9:00 AM – 7:00 PM PKT<br />(4:00 AM – 2:00 PM GMT)</p>
                     </div>
                   </div>
+
+                  <div>
+                    
+                  </div>
                 </div>
               </Reveal>
 
               <Reveal delay={0.1}>
                 <div>
                   <h3 style={{ fontSize: 18, fontWeight: 600, color: T.ink, marginBottom: 18, borderBottom: `1px solid ${T.mistDim}`, paddingBottom: 10 }}>Strategic Channels</h3>
-                  <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+                  <div style={{ display: "flex", flexDirection: "column", gap: 14, marginBottom: 20 }}>
                     <div style={{ display: "flex", justifyContent: "space-between", fontSize: 14 }}>
                       <span style={{ fontWeight: 600, color: T.textSecondaryLight }}>Client Relations:</span>
-                      <span style={{ fontFamily: T.sans, color: T.teal }}>info@xencorpsolutions.com</span>
+                      <span style={{ fontFamily: T.sans, color: T.teal, fontWeight: 500 }}>info@xencorpsolutions.com</span>
                     </div>
                     <div style={{ display: "flex", justifyContent: "space-between", fontSize: 14 }}>
                       <span style={{ fontWeight: 600, color: T.textSecondaryLight }}>Enterprise RFP / Sales:</span>
-                      <span style={{ fontFamily: T.sans, color: T.teal }}>sales@xencorpsolutions.com</span>
+                      <span style={{ fontFamily: T.sans, color: T.teal, fontWeight: 500 }}>sales@xencorpsolutions.com</span>
                     </div>
                     <div style={{ display: "flex", justifyContent: "space-between", fontSize: 14 }}>
                       <span style={{ fontWeight: 600, color: T.textSecondaryLight }}>Careers & Talent:</span>
-                      <span style={{ fontFamily: T.sans, color: T.teal }}>careers@xencorpsolutions.com</span>
+                      <span style={{ fontFamily: T.sans, color: T.teal, fontWeight: 500 }}>careers@xencorpsolutions.com</span>
                     </div>
                   </div>
                 </div>
               </Reveal>
+
+              
             </div>
 
             {/* Right Column: Inquiry Form */}
@@ -169,7 +207,7 @@ export default function Contact() {
                 {formStatus === "success" ? (
                   <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} style={{ padding: "36px 0", textAlign: "center" }}>
                     <div style={{ width: 56, height: 56, borderRadius: "50%", background: "rgba(0,163,112,0.1)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 18px" }}>
-                      <svg width="28" height="28" fill="none" stroke="#00A370" viewBox="0 0 24 24" strokeWidth="2"><polyline points="20 6 9 17 4 12"/></svg>
+                      <svg width="28" height="28" fill="none" stroke="#00A370" viewBox="0 0 24 24" strokeWidth={2}><polyline points="20 6 9 17 4 12"/></svg>
                     </div>
                     <h4 style={{ fontSize: 18, fontWeight: 600, color: T.ink, marginBottom: 8 }}>Inquiry Submitted</h4>
                     <p style={{ fontSize: 13.5, color: T.textSecondaryLight, lineHeight: 1.6, fontWeight: 300 }}>Thank you for reaching out. A systems engineer or partner advisor will contact you within 24 business hours.</p>
@@ -266,15 +304,15 @@ export default function Contact() {
                       disabled={formStatus === "submitting"}
                       style={{
                         padding: "13px 24px",
-                        background: T.teal, color: T.white,
+                        background: "#16A34A", color: T.white,
                         border: "none", borderRadius: 100,
                         fontSize: 13.5, fontWeight: 600,
                         cursor: "pointer", display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8,
-                        boxShadow: `0 4px 18px ${T.tealGlowStrong}`, marginTop: 10,
+                        boxShadow: `0 4px 18px rgba(22,163,74,0.25)`, marginTop: 10,
                         transition: "background 0.2s"
                       }}
-                      onMouseEnter={(e) => { e.currentTarget.style.background = T.tealLight; }}
-                      onMouseLeave={(e) => { e.currentTarget.style.background = T.teal; }}
+                      onMouseEnter={(e) => { e.currentTarget.style.background = "#15803D"; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.background = "#16A34A"; }}
                     >
                       {formStatus === "submitting" ? (
                         <>
@@ -284,7 +322,7 @@ export default function Contact() {
                       ) : (
                         <>
                           Submit Inquiry Brief
-                          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </>
                       )}
                     </button>

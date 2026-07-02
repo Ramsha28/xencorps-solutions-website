@@ -238,7 +238,19 @@ export default function ProductHero({
   return (
     <section style={{ position: "relative", minHeight: "75vh", display: "flex", alignItems: "center", overflow: "hidden", background: T.ink }}>
       {/* Subtle grid backdrop */}
-      <div style={{ position: "absolute", inset: 0, opacity: 0.03, backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
+      <div style={{ position: "absolute", inset: 0, opacity: 0.03, backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "30px 30px", zIndex: 1 }} />
+
+      {/* Background Image overlay */}
+      <div style={{
+        position: "absolute",
+        inset: 0,
+        backgroundImage: "url('/images/secondary-hero-bg.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        opacity: 0.20,
+        pointerEvents: "none",
+        zIndex: 1
+      }} />
 
       <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 36px", paddingTop: 136, paddingBottom: 64, width: "100%", position: "relative", zIndex: 2 }}>
         <div style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: 56, alignItems: "center" }} className="hero-grid-layout">

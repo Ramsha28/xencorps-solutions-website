@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { T } from "../../styles/theme";
 import Reveal from "../../components/common/Reveal";
+import ImagePlaceholder from "../../components/common/ImagePlaceholder";
 
 const pillars = [
   {
@@ -53,43 +54,66 @@ export default function WhyChooseServices() {
           </div>
         </Reveal>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))", gap: 32 }}>
-          {pillars.map((p, idx) => (
-            <Reveal key={p.title} delay={idx * 0.05}>
-              <motion.div
-                onHoverStart={() => setHov(idx)}
-                onHoverEnd={() => setHov(null)}
-                style={{
-                  background: hov === idx ? T.inkSoft : T.inkMid,
-                  border: `1px solid ${hov === idx ? "rgba(0,194,160,0.25)" : "rgba(0,194,160,0.08)"}`,
-                  borderRadius: 10,
-                  padding: "40px 36px",
-                  height: "100%",
-                  transition: "background 0.25s, border-color 0.25s",
-                  boxShadow: hov === idx ? `0 10px 30px ${T.navyGlow}` : "none"
-                }}
-              >
-                <h3 style={{
-                  fontSize: 18,
-                  fontWeight: 600,
-                  color: hov === idx ? T.tealLight : T.white,
-                  marginBottom: 12,
-                  letterSpacing: "-0.01em",
-                  transition: "color 0.2s"
-                }}>
-                  {p.title}
-                </h3>
-                <p style={{
-                  fontSize: 14,
-                  color: T.textSecondary,
-                  lineHeight: 1.65,
-                  fontWeight: 300
-                }}>
-                  {p.desc}
-                </p>
-              </motion.div>
+        <style>{`
+          @media (max-width: 991px) {
+            .services-pillars-grid {
+              grid-template-columns: 1fr !important;
+              gap: 40px !important;
+            }
+            .pillars-cards-container {
+              grid-template-columns: 1fr !important;
+            }
+          }
+        `}</style>
+        <div style={{ display: "grid", gridTemplateColumns: "1.25fr 0.75fr", gap: 40, alignItems: "start" }} className="services-pillars-grid">
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }} className="pillars-cards-container">
+            {pillars.map((p, idx) => (
+              <Reveal key={p.title} delay={idx * 0.05}>
+                <motion.div
+                  onHoverStart={() => setHov(idx)}
+                  onHoverEnd={() => setHov(null)}
+                  style={{
+                    background: hov === idx ? T.inkSoft : T.inkMid,
+                    border: `1px solid ${hov === idx ? "rgba(0,194,160,0.25)" : "rgba(0,194,160,0.08)"}`,
+                    borderRadius: 10,
+                    padding: "36px 30px",
+                    height: "100%",
+                    transition: "background 0.25s, border-color 0.25s",
+                    boxShadow: hov === idx ? `0 10px 30px ${T.navyGlow}` : "none"
+                  }}
+                >
+                  <h3 style={{
+                    fontSize: 17,
+                    fontWeight: 600,
+                    color: hov === idx ? T.tealLight : T.white,
+                    marginBottom: 12,
+                    letterSpacing: "-0.01em",
+                    transition: "color 0.2s"
+                  }}>
+                    {p.title}
+                  </h3>
+                  <p style={{
+                    fontSize: 13.5,
+                    color: T.textSecondary,
+                    lineHeight: 1.6,
+                    fontWeight: 300
+                  }}>
+                    {p.desc}
+                  </p>
+                </motion.div>
+              </Reveal>
+            ))}
+          </div>
+          <div style={{ position: "sticky", top: 100 }}>
+            <Reveal delay={0.2}>
+              <ImagePlaceholder
+                aspectRatio="4/5"
+                label="Enterprise Support SLA Telemetry Dashboard"
+                sublabel="Target: 4:5 visual mockup displaying response latency graphs, uptime metrics (99.99%), support queue levels, and secure patching histories"
+                iconType="database"
+              />
             </Reveal>
-          ))}
+          </div>
         </div>
 
       </div>

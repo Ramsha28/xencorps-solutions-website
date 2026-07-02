@@ -32,7 +32,16 @@ export default function IndustriesServed({ industries, accentColor }: Industries
           </p>
         </Reveal>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 24 }}>
+        <style>{`
+          @media (max-width: 991px) {
+            .industries-grid {
+              grid-template-columns: 1fr !important;
+              gap: 24px !important;
+            }
+          }
+        `}</style>
+
+        <div className="industries-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
           {industries.map((ind, i) => (
             <Reveal key={i} delay={i * 0.08}>
               <motion.div
@@ -58,7 +67,7 @@ export default function IndustriesServed({ industries, accentColor }: Industries
                     {ind.name}
                   </h3>
                   
-                  <p style={{ fontFamily: T.sans, fontSize: 13, color: T.textSecondary, lineHeight: 1.6, fontWeight: 300 }}>
+                  <p style={{ fontFamily: T.sans, fontSize: 13.5, color: T.textSecondary, lineHeight: 1.6, fontWeight: 300 }}>
                     {ind.desc}
                   </p>
                 </div>

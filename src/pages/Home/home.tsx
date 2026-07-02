@@ -10,6 +10,7 @@ import EcosystemSection from "../../sections/home/EcosystemSection";
 import WhyChooseUs from "../../sections/home/WhyChooseUs";
 import IndustriesSection from "../../sections/home/IndustriesSection";
 import DeliveryProcess from "../../sections/home/DeliveryProcess";
+import HomeFAQ from "../../sections/home/HomeFAQ";
 import CTASection from "../../sections/home/CTASection";
 import { T } from "../../styles/theme";
 
@@ -24,13 +25,14 @@ export default function XencorpHomepage() {
       `}</style>
       <Navigation />
       <Hero />
-      <MarqueeStrip />
-      <BusinessImpact />
-      <ServicesSection />
       <EcosystemSection />
+      <MarqueeStrip />
+      <ServicesSection />
+      <BusinessImpact />
       <WhyChooseUs />
-      <IndustriesSection />
       <DeliveryProcess />
+      <IndustriesSection />
+      <HomeFAQ />
       <CTASection />
       <Footer />
     </main>

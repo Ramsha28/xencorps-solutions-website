@@ -1,0 +1,43 @@
+# Xencorp Solutions Website Map for LLMs
+
+This website describes Xencorp Solutions, a premium global enterprise software consulting and systems engineering firm. We merge high-level technology consulting with proprietary platform accelerators.
+
+## Core Identity
+
+- **Name**: Xencorp Solutions
+- **Location**: Lahore, Pakistan (Strategic Engineering Center)
+- **Focus**: Custom Software, ERP, GRC, FinTech, and AI Automations.
+- **Differentiators**: 100% IP ownership, Senior Architects on all projects, Compliance-ready codebases (SOC 2, HIPAA, GDPR, DORA).
+
+## Site Architecture
+
+All endpoints serve pre-rendered Next.js content:
+
+- `/` (Home): Who is Xencorp, business metrics, and core differentiators.
+- `/services` (Practice Areas): Overview of consulting practices.
+  - `/services/custom-software-development`: Custom systems engineering.
+  - `/services/web-development`: Scalable enterprise web portals.
+  - `/services/mobile-app-development`: Native and cross-platform apps.
+  - `/services/ai-intelligent-systems`: Machine learning, predictive models, NLP.
+  - `/services/erp-solutions`: Odoo and custom ERP automation.
+  - `/services/e-commerce-solutions`: Scalable transaction engines.
+  - `/services/data-center-development`: Hybrid cloud infrastructure.
+  - `/services/it-consultancy`: Enterprise architecture and strategy advisory.
+- `/products` (Proprietary Platforms): Redirects to Orion.
+  - `/products/smart-orion`: ERP, Point of Sale, and inventory sync systems.
+  - `/products/smart-grc`: AI-powered governance, risk, and compliance management.
+  - `/products/smart-crypto-exchange`: Institutional-grade cryptocurrency trading engines.
+- `/industries` (Sectors Served): tailors compliance controls for Banking, Healthcare, Retail, Logistics, Manufacturing, Government.
+- `/resources` (Advisory Assets): Whitepapers (offline ERP, GRC guides) and company profile.
+- `/case-studies` (Client Proof): Portfolio overview (Coming Soon).
+- `/about` (Firm History): Milestones, core values, engineering pillars.
+- `/contact` (Lead intake): Discovery briefs intake form and HQ coordinate contacts.
+- `/development-process` (Delivery flow): SDLC phases.
+- `/engagement-models` (Commercial tracks): Procurement models (Dedicated team, fixed scope, hourly).
+- `/technologies` (Stack mapping): Systems stack (React, Node, Spring Boot, Python AI, K8s, Docker).
+
+## Technical Architecture
+
+- **Frontend**: Next.js App Router (16.2.9), React (19.2.4), Framer Motion animations.
+- **Backend Stack**: Java Spring Boot (banking persistence), Node.js (high-concurrency gateways), Python (ML models).
+- **Hosting / Infra**: Docker containerization, Kubernetes clusters, hybrid-cloud failover.

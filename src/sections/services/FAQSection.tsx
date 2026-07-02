@@ -25,6 +25,14 @@ const faqs = [
   {
     q: "How do new project engagements begin?",
     a: "Engagements start with a Discovery & Diagnostic Workshop. Our architects map your workflows, design initial database structures, evaluate compliance needs, and deliver a complete project blueprint and roadmap."
+  },
+  {
+    q: "What compliance frameworks do your engineering practices adhere to?",
+    a: "Our team designs and builds systems with strict adherence to industry compliance standards. Depending on the project scope, we implement technical controls for HIPAA (healthcare data), SOC 2, ISO 27001 (information security), GDPR (data privacy), and PCI DSS (payment processing), including auditing ledgers and end-to-end data encryption."
+  },
+  {
+    q: "Do we own the intellectual property rights to the custom software you develop?",
+    a: "Yes, completely. Once the engagement terms are fulfilled, 100% of the custom codebase, database configurations, design assets, and deployment scripts are owned by your organization. We deliver proprietary solutions with no licensing fees or vendor lock-ins."
   }
 ];
 

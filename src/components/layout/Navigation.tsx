@@ -103,8 +103,10 @@ function Navigation() {
   const links = [
     { name: "Services", href: "/services" },
     { name: "Products", href: "/products" },
+    { name: "Industries", href: "/industries" },
     { name: "Case Studies", href: "/case-studies" },
     { name: "About", href: "/about" },
+    { name: "Resources", href: "/resources" },
   ];
 
   const isNavLight = scrolled || activeMenu;
@@ -130,7 +132,7 @@ function Navigation() {
     >
       <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 36px", height: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", position: "relative", zIndex: 102 }}>
         {/* Logo */}
-        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}
+        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 6, textDecoration: "none" }}
               onMouseEnter={() => setHoveredLink(null)}
         >
           <img
@@ -247,7 +249,7 @@ function Navigation() {
                     href="/services"
                     onClick={() => {
                       setHoveredLink(null);
-                      setIsMenuHovered(false);
+                      setIsMenuHovered(true);
                     }}
                     style={{
                       alignSelf: "flex-start",
