@@ -19,6 +19,19 @@ export default function EcosystemSection() {
   return (
     <section style={{ background: T.ink, padding: "112px 0", overflow: "hidden" }}>
       <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 36px" }}>
+        <style>{`
+          @media (max-width: 991px) {
+            .ecosystem-grid {
+              grid-template-columns: 1fr !important;
+              gap: 48px !important;
+            }
+          }
+          @media (max-width: 540px) {
+            .ecosystem-diagram-container {
+              height: 350px !important;
+            }
+          }
+        `}</style>
         <Reveal style={{ textAlign: "center", marginBottom: 68 }}>
           <p style={{ fontFamily: T.sans, fontSize: 11, fontWeight: 600, color: T.navyLight, textTransform: "uppercase", letterSpacing: "0.16em", marginBottom: 14 }}>Ecosystem</p>
           <h2 style={{ fontFamily: T.sans, fontSize: "clamp(28px, 3.6vw, 50px)", fontWeight: 700, color: T.white, letterSpacing: "-0.025em", lineHeight: 1.1, marginBottom: 16 }}>Our Enterprise Software Platforms</h2>
@@ -27,9 +40,9 @@ export default function EcosystemSection() {
           </p>
         </Reveal>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 52, alignItems: "center" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 52, alignItems: "center" }} className="ecosystem-grid">
           <Reveal direction="left">
-            <div style={{ position: "relative", height: 440 }}>
+            <div style={{ position: "relative", height: 440 }} className="ecosystem-diagram-container">
               {/* Static connector lines only — no animated packets */}
               <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", pointerEvents: "none" }} viewBox="0 0 420 440" preserveAspectRatio="xMidYMid meet">
                 <line x1="210" y1="220" x2="210" y2="60"  stroke={T.navyLight} strokeWidth="1"   strokeDasharray="5 5" opacity="0.38"/>

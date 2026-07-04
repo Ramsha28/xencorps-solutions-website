@@ -82,6 +82,18 @@ function Navigation() {
   const [hoveredLink, setHoveredLink] = useState<"services" | "products" | null>(null);
   const [isMenuHovered, setIsMenuHovered] = useState(false);
   const [activeMenu, setActiveMenu] = useState<"services" | "products" | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
 
   useEffect(() => {
     const h = () => setScrolled(window.scrollY > 36);
@@ -131,6 +143,19 @@ function Navigation() {
         transition: "background 0.3s, border-color 0.3s, box-shadow 0.3s",
       }}
     >
+      <style>{`
+        .nav-mobile-btn {
+          display: none;
+        }
+        @media (max-width: 991px) {
+          .nav-desktop-links {
+            display: none !important;
+          }
+          .nav-mobile-btn {
+            display: flex !important;
+          }
+        }
+      `}</style>
       <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 36px", height: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", position: "relative", zIndex: 102 }}>
         {/* Logo */}
         <Link href="/" style={{ display: "flex", alignItems: "center", gap: 6, textDecoration: "none" }}
@@ -154,7 +179,7 @@ function Navigation() {
         </Link>
 
         {/* Links */}
-        <div style={{ display: "flex", alignItems: "center", gap: 30 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 30 }} className="nav-desktop-links">
           {links.map(l => {
             const isTrigger = l.name === "Services" || l.name === "Products";
             const triggerType = l.name === "Services" ? "services" : l.name === "Products" ? "products" : null;
@@ -211,7 +236,51 @@ function Navigation() {
             Schedule Consultation
           </Link>
         </div>
-      </div>
+      
+      {/* Mobile Hamburger Button */}
+      <button
+        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        className="nav-mobile-btn"
+        style={{
+          background: "transparent",
+          border: "none",
+          flexDirection: "column",
+          gap: 5,
+          cursor: "pointer",
+          padding: 8,
+          zIndex: 110,
+          alignItems: "center",
+          justifyContent: "center",
+          width: 40,
+          height: 40,
+        }}
+      >
+        <span style={{
+          width: 22,
+          height: 2,
+          background: isMobileMenuOpen ? "#0F172A" : textColor,
+          transition: "transform 0.3s, background 0.3s",
+          transform: isMobileMenuOpen ? "translateY(7px) rotate(45deg)" : "none",
+          borderRadius: 2,
+        }} />
+        <span style={{
+          width: 22,
+          height: 2,
+          background: isMobileMenuOpen ? "#0F172A" : textColor,
+          transition: "opacity 0.3s, background 0.3s",
+          opacity: isMobileMenuOpen ? 0 : 1,
+          borderRadius: 2,
+        }} />
+        <span style={{
+          width: 22,
+          height: 2,
+          background: isMobileMenuOpen ? "#0F172A" : textColor,
+          transition: "transform 0.3s, background 0.3s",
+          transform: isMobileMenuOpen ? "translateY(-7px) rotate(-45deg)" : "none",
+          borderRadius: 2,
+        }} />
+      </button>
+    </div>
 
       {/* Mega Menu Dropdown */}
       <AnimatePresence>
@@ -450,7 +519,99 @@ function Navigation() {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+
+    {/* Mobile Menu Backdrop */}
+    <AnimatePresence>
+      {isMobileMenuOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.4 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setIsMobileMenuOpen(false)}
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "#000000",
+            zIndex: 104,
+          }}
+        />
+      )}
+    </AnimatePresence>
+
+    {/* Mobile Menu Drawer */}
+    <AnimatePresence>
+      {isMobileMenuOpen && (
+        <motion.div
+          initial={{ x: "100%" }}
+          animate={{ x: 0 }}
+          exit={{ x: "100%" }}
+          transition={{ type: "tween", duration: 0.3, ease: "easeOut" }}
+          style={{
+            position: "fixed",
+            top: 0,
+            right: 0,
+            bottom: 0,
+            width: "100%",
+            maxWidth: 320,
+            background: "rgba(255, 255, 255, 0.98)",
+            backdropFilter: "blur(20px)",
+            boxShadow: "-10px 0 40px rgba(0,0,0,0.15)",
+            padding: "96px 36px 48px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            zIndex: 105,
+            overflowY: "auto",
+          }}
+        >
+          <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+            {links.map(l => (
+              <Link
+                key={l.name}
+                href={l.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                style={{
+                  fontFamily: T.sans,
+                  fontSize: 18,
+                  fontWeight: 600,
+                  color: "#0F172A",
+                  textDecoration: "none",
+                  letterSpacing: "-0.01em",
+                  borderBottom: "1px solid rgba(0,0,0,0.05)",
+                  paddingBottom: 10,
+                  display: "block",
+                }}
+              >
+                {l.name}
+              </Link>
+            ))}
+          </div>
+
+          <div style={{ marginTop: 40 }}>
+            <Link
+              href="/contact"
+              onClick={() => setIsMobileMenuOpen(false)}
+              style={{
+                display: "block",
+                padding: "14px 24px",
+                background: "#16A34A",
+                color: T.white,
+                fontFamily: T.sans,
+                fontSize: 14,
+                fontWeight: 600,
+                borderRadius: 100,
+                textDecoration: "none",
+                textAlign: "center",
+                boxShadow: "0 4px 18px rgba(22, 163, 74, 0.25)",
+              }}
+            >
+              Schedule Consultation
+            </Link>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  </motion.nav>
   );
 }
 

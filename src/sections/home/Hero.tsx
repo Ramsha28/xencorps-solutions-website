@@ -14,6 +14,16 @@ export default function Hero() {
 
   return (
     <section style={{ position: "relative", minHeight: "100vh", background: T.ink, display: "flex", alignItems: "center", overflow: "hidden" }}>
+      <style>{`
+        @media (max-width: 768px) {
+          .hero-stats-row {
+            flex-direction: column !important;
+            gap: 28px !important;
+            align-items: flex-start !important;
+            margin-top: 48px !important;
+          }
+        }
+      `}</style>
       <HeroBg scrollYProgress={scrollYProgress} />
 
       <div style={{ position: "relative", maxWidth: 1300, margin: "0 auto 0 0", padding: "0 36px 0 54px", paddingTop: 144, paddingBottom: 96, width: "100%", zIndex: 3 }}>
@@ -138,6 +148,7 @@ export default function Hero() {
                 width: "100%",
                 maxWidth: 600
               }}
+              className="hero-stats-row"
             >
               {[
                 { v: 3,  s: "",   l: "Proprietary Platforms" },

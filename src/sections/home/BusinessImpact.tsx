@@ -16,6 +16,18 @@ export default function BusinessImpact() {
   return (
     <section style={{ background: T.ink, padding: "104px 0" }}>
       <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 36px" }}>
+        <style>{`
+          @media (max-width: 991px) {
+            .metrics-grid {
+              grid-template-columns: repeat(2, 1fr) !important;
+            }
+          }
+          @media (max-width: 540px) {
+            .metrics-grid {
+              grid-template-columns: 1fr !important;
+            }
+          }
+        `}</style>
         <Reveal>
           <div style={{ marginBottom: 60 }}>
             <p style={{ fontFamily: T.sans, fontSize: 11, fontWeight: 600, color: T.navyLight, textTransform: "uppercase", letterSpacing: "0.16em", marginBottom: 14 }}>Business Impact</p>
@@ -26,7 +38,7 @@ export default function BusinessImpact() {
           </div>
         </Reveal>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 1, background: "rgba(255, 255, 255, 0.08)" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 1, background: "rgba(255, 255, 255, 0.08)" }} className="metrics-grid">
           {metrics.map((m) => (
             <motion.div
               key={m.label}

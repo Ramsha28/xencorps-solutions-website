@@ -8,7 +8,15 @@ export default function CTASection() {
     <section style={{ background:T.ink, padding:"96px 0", position:"relative", overflow:"hidden" }}>
       <div style={{ position:"absolute", inset:0, opacity:0.02, backgroundImage:"radial-gradient(circle, white 1px, transparent 1px)", backgroundSize:"26px 26px" }}/>
       <div style={{ maxWidth:1300, margin:"0 auto", padding:"0 36px", position:"relative" }}>
-        <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:56, alignItems:"center" }}>
+        <style>{`
+          @media (max-width: 991px) {
+            .cta-grid {
+              grid-template-columns: 1fr !important;
+              gap: 40px !important;
+            }
+          }
+        `}</style>
+        <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:56, alignItems:"center" }} className="cta-grid">
           <Reveal>
             <div>
               <p style={{ fontFamily:T.sans, fontSize:11, fontWeight:600, color:T.tealLight, textTransform:"uppercase", letterSpacing:"0.16em", marginBottom:18 }}>Ready to Begin</p>

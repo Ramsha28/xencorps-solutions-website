@@ -20,6 +20,18 @@ export default function ServicesSection() {
   return (
     <section style={{ background: T.mist, padding: "112px 0" }}>
       <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 36px" }}>
+        <style>{`
+          @media (max-width: 991px) {
+            .services-grid {
+              grid-template-columns: repeat(2, 1fr) !important;
+            }
+          }
+          @media (max-width: 640px) {
+            .services-grid {
+              grid-template-columns: 1fr !important;
+            }
+          }
+        `}</style>
         <Reveal>
           <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 60, flexWrap: "wrap", gap: 20 }}>
             <div>
@@ -35,7 +47,7 @@ export default function ServicesSection() {
           </div>
         </Reveal>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", border: `1px solid ${T.mistDim}` }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", border: `1px solid ${T.mistDim}` }} className="services-grid">
           {services.map((s, i) => (
             <Link href={s.href} key={s.title} style={{ textDecoration: "none", color: "inherit", display: "block" }}>
               <motion.div
