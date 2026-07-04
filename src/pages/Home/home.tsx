@@ -8,6 +8,7 @@ import BusinessImpact from "../../sections/home/BusinessImpact";
 import ServicesSection from "../../sections/home/ServicesSection";
 import EcosystemSection from "../../sections/home/EcosystemSection";
 import WhyChooseUs from "../../sections/home/WhyChooseUs";
+import PartnershipsSection from "../../sections/home/PartnershipsSection";
 import IndustriesSection from "../../sections/home/IndustriesSection";
 import DeliveryProcess from "../../sections/home/DeliveryProcess";
 import HomeFAQ from "../../sections/home/HomeFAQ";
@@ -30,6 +31,7 @@ export default function XencorpHomepage() {
       <ServicesSection />
       <BusinessImpact />
       <WhyChooseUs />
+      <PartnershipsSection />
       <DeliveryProcess />
       <IndustriesSection />
       <HomeFAQ />

@@ -17,7 +17,13 @@ export default function DeliveryProcess() {
     <section style={{ background:T.mist, padding:"112px 0" }}>
       <div style={{ maxWidth:1300, margin:"0 auto", padding:"0 36px" }}>
         <style>{`
+          .delivery-empty-space {
+            display: block;
+          }
           @media (max-width: 991px) {
+            .delivery-empty-space {
+              display: none !important;
+            }
             .delivery-grid {
               grid-template-columns: 1fr !important;
               gap: 40px !important;
@@ -36,9 +42,24 @@ export default function DeliveryProcess() {
           }
         `}</style>
         
-        <div style={{ display: "grid", gridTemplateColumns: "0.95fr 1.05fr", gap: 64, alignItems: "stretch" }} className="delivery-grid">
-          {/* Left Column: Image (Stretches to full height of right column) */}
-          <Reveal delay={0.1}>
+        <div style={{ display: "grid", gridTemplateColumns: "0.95fr 1.05fr", gap: "0 64px", alignItems: "stretch" }} className="delivery-grid">
+          {/* Row 1, Left: Spacer (Aligns with heading height) */}
+          <div className="delivery-empty-space" />
+
+          {/* Row 1, Right: Heading */}
+          <Reveal>
+            <div style={{ marginBottom: 40 }}>
+              <p style={{ fontFamily: T.sans, fontSize: 11, fontWeight: 600, color: T.teal, textTransform: "uppercase", letterSpacing: "0.16em", marginBottom: 14 }}>
+                Delivery Methodology
+              </p>
+              <h2 style={{ fontFamily: T.sans, fontSize: "clamp(28px,3.4vw,44px)", fontWeight: 700, color: T.ink, letterSpacing: "-0.025em", lineHeight: 1.1 }}>
+                How We Deliver<br />Enterprise Transformation
+              </h2>
+            </div>
+          </Reveal>
+
+          {/* Row 2, Left: Image (Starts below heading, aligned with steps) */}
+          <Reveal delay={0.1} style={{ height: "100%" }}>
             <div className="delivery-image" style={{ borderRadius: 16, overflow: "hidden", height: "100%" }}>
               <img
                 src="/images/delivery.png"
@@ -48,19 +69,8 @@ export default function DeliveryProcess() {
             </div>
           </Reveal>
 
-          {/* Right Column: Title + Steps Grid */}
-          <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-            <Reveal>
-              <div style={{ marginBottom: 40 }}>
-                <p style={{ fontFamily:T.sans, fontSize:11, fontWeight:600, color:T.teal, textTransform:"uppercase", letterSpacing:"0.16em", marginBottom:14 }}>
-                  Delivery Methodology
-                </p>
-                <h2 style={{ fontFamily:T.sans, fontSize:"clamp(28px,3.4vw,44px)", fontWeight:700, color:T.ink, letterSpacing:"-0.025em", lineHeight:1.1 }}>
-                  How We Deliver<br/>Enterprise Transformation
-                </h2>
-              </div>
-            </Reveal>
-
+          {/* Row 2, Right: Steps Grid */}
+          <div style={{ display: "flex", flexDirection: "column" }}>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, flex: 1 }} className="delivery-steps-grid">
               {steps.map((s, i) => (
                 <Reveal key={s.l} delay={i * 0.06}>

@@ -16,22 +16,20 @@ export default function Hero() {
     <section style={{ position: "relative", minHeight: "100vh", background: T.ink, display: "flex", alignItems: "center", overflow: "hidden" }}>
       <HeroBg scrollYProgress={scrollYProgress} />
 
-      <div style={{ position: "relative", maxWidth: 1300, margin: "0 auto", padding: "0 36px", paddingTop: 144, paddingBottom: 96, width: "100%", zIndex: 3 }}>
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }} className="hero-content-layout">
-          <div style={{ maxWidth: 960, display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <div style={{ position: "relative", maxWidth: 1300, margin: "0 auto 0 0", padding: "0 36px 0 54px", paddingTop: 144, paddingBottom: 96, width: "100%", zIndex: 3 }}>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", textAlign: "left" }} className="hero-content-layout">
+          <div style={{ maxWidth: 960, display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
 
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.18 }}
-              style={{ y: badgeY, display: "flex", alignItems: "center", justifyContent: "center", gap: 11, marginBottom: 32 }}
+              style={{ y: badgeY, display: "flex", alignItems: "center", justifyContent: "flex-start", gap: 11, marginBottom: 32 }}
             >
-              <div style={{ width: 30, height: 1.5, background: "#16A34A", borderRadius: 2 }}/>
               <span style={{ fontFamily: T.sans, fontSize: 11, fontWeight: 600, color: T.textOnDarkSecondary, textTransform: "uppercase", letterSpacing: "0.18em" }}>
                 Enterprise Platforms & Technology Consulting
               </span>
-              <div style={{ width: 30, height: 1.5, background: "#16A34A", borderRadius: 2 }}/>
             </motion.div>
 
             {/* Headline */}
@@ -78,7 +76,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 22 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.62, delay: 0.58 }}
-              style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center" }}
+              style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "flex-start" }}
             >
               <Link href="/contact" style={{
                 padding: "15px 32px",
@@ -133,7 +131,7 @@ export default function Hero() {
                 opacity: statOp,
                 display: "flex",
                 gap: 64,
-                justifyContent: "center",
+                justifyContent: "flex-start",
                 marginTop: 80,
                 paddingTop: 36,
                 borderTop: "1px solid rgba(255, 255, 255, 0.08)",

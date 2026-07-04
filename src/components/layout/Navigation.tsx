@@ -106,6 +106,7 @@ function Navigation() {
     { name: "Industries", href: "/industries" },
     { name: "Case Studies", href: "/case-studies" },
     { name: "About", href: "/about" },
+    { name: "Partnerships", href: "/partnerships" },
     { name: "Resources", href: "/resources" },
   ];
 
